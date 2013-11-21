@@ -5,6 +5,8 @@ Beautiful Wikia
 
 1. [Installation](#installation)
 2. [Overview](#overview)
+3. [Engineering Tasks](#engineering-tasks)
+4. [Design Tasks](#design-tasks)
 
 ## Installation
 * `git clone git@github.com:kenkouot/beautiful-wikia.git`
@@ -16,4 +18,10 @@ Beautiful Wikia
 ## Overview
 Overall, this app is a simple concept. We want to distill the Wikia article experience, showing the parts that users really care about. This projects aims to reduce the complexity of the reading experience and bring it up to parity with modern expectations of design and development.
 
-At a high level, this app will use/modify **MediaWiki's Parsoid** to retrieve sanitized and semantic markup and deliver it through `SailsJS` RESTful backend to our clientside `AngularJS` app. We will use `SCSS` for our styling, organized in `[SMACSS](http://http://smacss.com/)` style.
+At a high level, this app will use/modify **MediaWiki's Parsoid** to retrieve sanitized and semantic markup and deliver it through **SailsJS** RESTful backend to our clientside `AngularJS` app. We will use **SCSS** for our styling, organized in [SMACSS](http://http://smacss.com/) style.
+
+## Engineering Tasks
+* [ ] Set up repo with SailsJS, make sure installations are easily portable for incoming devs
+* [ ] Set up assets pipeline ( Use SCSS!!! )
+
+## Design Tasks
