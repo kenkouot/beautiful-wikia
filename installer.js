@@ -9,7 +9,7 @@ var npmInstall = [
 ];
 
 var dependencies = [
-  'bower', 'jshint', 'sails'
+  'bower', 'jshint', 'sails', 'nodemon'
 ];
 
 var children = [];
@@ -22,5 +22,4 @@ dependencies.forEach(function( dep ) {
   children.push( child );
 });
 
-
-
+sudo('bower', 'install');
