@@ -26,6 +26,9 @@ module.exports = function (grunt) {
    * To use SASS/SCSS, Stylus, etc., edit the `sails-linker:devStyles` task
    * below for more options.  For this to work, you may need to install new
    * dependencies, e.g. `npm install grunt-contrib-sass`
+   *
+   * NOTE: This app now uses SCSS
+   *
    */
 
   var cssFilesToInject = [
@@ -133,6 +136,7 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-cssmin/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
+  grunt.loadTasks( 'node_modules/grunt-contrib-sass/tasks');
 
   // Project configuration.
   grunt.initConfig({
@@ -182,23 +186,47 @@ module.exports = function (grunt) {
       }
     },
 
-    less: {
+    /*
+     * NO LONGER USING LESS, leaving this here for reference
+     *
+     * less: {
+     *   dev: {
+     *     files: [
+     *       {
+     *       expand: true,
+     *       cwd: 'assets/styles/',
+     *       src: ['*.less'],
+     *       dest: '.tmp/public/styles/',
+     *       ext: '.css'
+     *     }, {
+     *       expand: true,
+     *       cwd: 'assets/linker/styles/',
+     *       src: ['*.less'],
+     *       dest: '.tmp/public/linker/styles/',
+     *       ext: '.css'
+     *     }
+     *     ]
+     *   }
+     * },
+     *
+     *
+     */
+
+    sass: {
       dev: {
-        files: [
-          {
-          expand: true,
-          cwd: 'assets/styles/',
-          src: ['*.less'],
-          dest: '.tmp/public/styles/',
-          ext: '.css'
-        }, {
+        options: {
+          style: 'expanded',
+          trace: true,
+          lineNumbers: true,
+          noCache: true
+        },
+        files: [{
           expand: true,
           cwd: 'assets/linker/styles/',
-          src: ['*.less'],
+          src: ['*.scss'],
           dest: '.tmp/public/linker/styles/',
           ext: '.css'
-        }
-        ]
+        }]
       }
     },
 
@@ -422,7 +450,8 @@ module.exports = function (grunt) {
   grunt.registerTask('compileAssets', [
     'clean:dev',
     'jst:dev',
-    'less:dev',
+    // 'less:dev',
+    'sass:dev',
     'copy:dev',
     'coffee:dev'
   ]);
@@ -452,7 +481,8 @@ module.exports = function (grunt) {
   grunt.registerTask('prod', [
     'clean:dev',
     'jst:dev',
-    'less:dev',
+    // 'less:dev',
+    'sass:dev',
     'copy:dev',
     'coffee:dev',
     'concat',
