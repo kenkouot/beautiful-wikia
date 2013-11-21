@@ -1,0 +1,11 @@
+root = true
+
+[**.js]
+indent_style = space
+indent_size = 2
+indent_with_tabs = true
+break_chained_methods = true
+space_before_conditional = true
+max_line_width = 120
+trim_trailing_whitespace = true
+charset = utf8

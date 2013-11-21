@@ -13,5 +13,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angularjs": "*",
+    "requirejs": "~2.1.9",
+    "polymer": "~0.0.20131107"
+  }
 }
