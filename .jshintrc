@@ -7,7 +7,7 @@
 	// Enforcing
 	"bitwise": true,
 	"camelcase": true,
-	"curly": true,
+	"curly": false,
 	"eqeqeq": true,
 	"immed": true,
 	"latedef": true,
