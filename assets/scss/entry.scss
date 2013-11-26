@@ -1,3 +1,9 @@
+// Import local Bourbon config
+@import 'bourbon';
+
+// Import local Foundation main file
+@import 'foundation';
+
 @import 'settings';
 @import 'base';
 @import 'layout';

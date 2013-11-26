@@ -1,2 +1,5 @@
-@import '../../components/normalize-css/normalize.css';
+// Import Normalize SCSS file from Foundation core
+@import '../../components/foundation/scss/normalize';
+
+// Includes all libraries and app specific code
 @import '../../scss/entry';
