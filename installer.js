@@ -21,5 +21,3 @@ dependencies.forEach(function( dep ) {
   });
   children.push( child );
 });
-
-sudo('bower', 'install');
