@@ -1,24 +1,32 @@
 var angularPath,
+    angularResourcePath,
+    componentsPath,
     env;
 
 env = window.wikia.env;
-angularPath = '../components/angular/angular';
+componentsPath = '../components/'
+angularPath = componentsPath + 'angular/angular';
+angularResourcePath = componentsPath + 'angular-resource/angular-resource';
 
 if ( env === 'production' ) {
   angularPath += '.min';
+  angularResourcePath += '.min';
 }
 
 require.config({
   paths: {
-    angular: angularPath
-    // angularRoute: '../components/angular-route/angular-route',
+    angular: angularPath,
+    angularResource: angularResourcePath
     // angularMocks: '../components/angular-mocks/angular-mocks',
     // text: '../components/requirejs-text/text'
   },
     shim: {
-      angular : {
-        exports : 'angular'
+      angular: {
+        exports : 'angular',
       },
+      angularResource: {
+        deps: [ 'angular' ]
+      }
       // angularRoute: [ 'angular' ],
       // angularMocks: {
       //   deps:[ 'angular' ],
