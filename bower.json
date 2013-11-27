@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "*",
     "requirejs": "~2.1.9",
     "polymer": "~0.0.20131107",
     "normalize-css": "~2.1.3",

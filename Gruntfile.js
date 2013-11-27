@@ -131,6 +131,8 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-concat/tasks');
   grunt.loadTasks(depsPath + '/grunt-sails-linker/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-jst/tasks');
+  // Precompilation of ng-templates
+  grunt.loadTasks(depsPath + '/grunt-angular-templates/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-watch/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-uglify/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-cssmin/tasks');
@@ -427,12 +429,18 @@ module.exports = function (grunt) {
       api: {
 
         // API files to watch:
-        files: ['api/**/*']
+        files: ['api/**/*'],
+        tasks: ['compileAssets']
       },
       assets: {
 
         // Assets to watch:
-        files: ['assets/**/*'],
+        files: [
+          'assets/**/*',
+          'assets/scss/*',
+          'assets/scss/**/*',
+          'assets/scss/**/**/*'
+        ],
 
         // When assets are changed:
         tasks: ['compileAssets', 'linkAssets']

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:ng="http://angularjs.org">
   <head>
     <title><%- title %></title>
 
@@ -30,10 +30,24 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/linker/styles/app.css">
     <!--STYLES END-->
+    <script type="text/javascript">
+      window.wikia = {};
+      wikia.env = <%- JSON.stringify( env ) %>;
+    </script>
+
   </head>
 
-  <body>
-    <%- body %>
+  <body ng-controller="BodyCtrl">
+    <header class="row">
+      <h1 ng-bind="headerText"></h1>
+    </header>
+    <div class="content row">
+      <%- body %>
+    </div>
+    <footer class="row">
+      <h1>Footer</h1/>
+    </footer>
+
 
 
 
@@ -59,7 +73,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+    <script type="text/javascript" src="/jst.js"></script>
     <!--TEMPLATES END-->
 
 

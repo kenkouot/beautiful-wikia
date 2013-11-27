@@ -1,10 +1,14 @@
+// Global App Settings
+@import 'settings';
+
+// Import libs & utilities
 // Import local Bourbon config
 @import 'bourbon';
 
 // Import local Foundation main file
 @import 'foundation';
 
-@import 'settings';
+// SMACSS
 @import 'base';
 @import 'layout';
 @import 'state';
