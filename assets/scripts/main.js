@@ -15,6 +15,7 @@
   // Path to Bower Components
   path.angular         = componentsPath + 'angular/angular';
   path.angularResource = componentsPath + 'angular-resource/angular-resource';
+  path.angularRoute    = componentsPath + 'angular-route/angular-route';
   path.jQuery          = componentsPath + 'jquery/jquery';
 
   if ( env === 'production' ) {
@@ -26,9 +27,10 @@
 
   require.config({
     paths: {
-      angular: path.angular,
-      angularResource: path.angularResource,
-      jQuery: path.jQuery
+      angular         : path.angular,
+      angularResource : path.angularResource,
+      angularRoute    : path.angularRoute,
+      jQuery          : path.jQuery
     },
     shim: {
       angular: {
@@ -36,6 +38,9 @@
         deps: [ 'jQuery' ]
       },
       angularResource: {
+        deps: [ 'angular' ]
+      },
+      angularRoute: {
         deps: [ 'angular' ]
       },
       jQuery: {

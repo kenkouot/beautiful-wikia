@@ -1,5 +1,6 @@
 define([
   'angular',
+  'angularRoute',
   'angularResource',
   'controllers/loader'
 ], function( angular ) {
@@ -7,6 +8,7 @@ define([
 
   return angular.module( 'wikia', [
     'ngResource',
+    'ngRoute',
     'wikia.controllers'
   ]);
 });
