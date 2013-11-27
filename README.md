@@ -5,8 +5,6 @@ Beautiful Wikia
 
 1. [Installation](#installation)
 2. [Overview](#overview)
-3. [Engineering Tasks](#engineering-tasks)
-4. [Design Tasks](#design-tasks)
 4. [Project Management](#project-management)
 
 ## Installation
