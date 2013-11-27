@@ -14,6 +14,8 @@ Beautiful Wikia
 * Install Node.js
 * `npm install` *(it will ask you for your sudo password to install global modules)*
 * `bower install`
+* Type `sails lift` in CLI to start application
+* Visit `[localhost:1337](http://localhost:1337)` to view the app
 * For sass compilation `gem install sass`
 * *Optional:* For CLI grunt tool `npm install -g grunt-cli`
 
