@@ -1,43 +1,51 @@
-var angularPath,
-    angularResourcePath,
+/**
+ * main.js
+ * @description Sets up app dependencies and exports various globals
+ */
+var path,
     componentsPath,
     env;
 
-env = window.wikia.env;
-componentsPath = '../components/'
-angularPath = componentsPath + 'angular/angular';
-angularResourcePath = componentsPath + 'angular-resource/angular-resource';
+// Get environment
+env                  = window.wikia.env;
+// Store paths
+path                 = {};
+componentsPath       = '../components/';
+// Path to Bower Components
+path.angular         = componentsPath + 'angular/angular';
+path.angularResource = componentsPath + 'angular-resource/angular-resource';
+path.jQuery          = componentsPath + 'jquery/jquery';
 
 if ( env === 'production' ) {
-  angularPath += '.min';
-  angularResourcePath += '.min';
+  // ship preminified versions in prod environment
+  path.forEach(function( path ) {
+    path += '.min';
+  });
 }
 
 require.config({
   paths: {
-    angular: angularPath,
-    angularResource: angularResourcePath
-    // angularMocks: '../components/angular-mocks/angular-mocks',
-    // text: '../components/requirejs-text/text'
+    angular: path.angular,
+    angularResource: path.angularResource,
+    jQuery: path.jQuery
   },
-    shim: {
-      angular: {
-        exports : 'angular',
-      },
-      angularResource: {
-        deps: [ 'angular' ]
-      }
-      // angularRoute: [ 'angular' ],
-      // angularMocks: {
-      //   deps:[ 'angular' ],
-      //   exports: 'angular.mock'
-      // }
+  shim: {
+    angular: {
+      exports: 'angular',
+      deps: [ 'jQuery' ]
     },
-    priority: [
-      'angular'
-    ],
-    deps: [
-      // manually initialize angular app on Require is ready
-      'bootstrap'
-    ]
-  });
+    angularResource: {
+      deps: [ 'angular' ]
+    },
+    jQuery: {
+      exports: '$'
+    }
+  },
+  priority: [
+    'angular'
+  ],
+  deps: [
+    // manually initialize angular app on Require is ready
+    'bootstrap'
+  ]
+});
