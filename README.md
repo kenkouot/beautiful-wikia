@@ -13,6 +13,7 @@ Beautiful Wikia
 * `git clone git@github.com:kenkouot/beautiful-wikia.git`
 * Install Node.js
 * `npm install` *(it will ask you for your sudo password to install global modules)*
+* `bower install`
 * For sass compilation `gem install sass`
 * *Optional:* For CLI grunt tool `npm install -g grunt-cli`
 
