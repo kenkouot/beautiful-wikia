@@ -23,3 +23,8 @@ At a high level, this app will use/modify **MediaWiki's Parsoid** to retrieve sa
 
 ## Project Management
 For now, we will use [Github Issues](https://github.com/kenkouot/beautiful-wikia/issues) for issues tracking and task assignment.
+
+**A note on GitHub issue labels:**
+* I've added labels for "Engineering" and "Design".
+* I've also added a "requirement" to differentiate from required dev and bugs & improvements.
+* Finally, I've added a "collaborate!" label, to signify that although a certain task is assigned to one person, that it can be considered a collaborate task and the assignee is simply the owner.
