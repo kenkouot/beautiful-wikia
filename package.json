@@ -11,8 +11,7 @@
     "optimist": "0.3.4",
     "sudo": "~1.0.3",
     "grunt-contrib-sass": "~0.5.0",
-    "restler": "~2.0.1",
-    "grunt-angular-templates": "~0.4.7"
+    "restler": "~2.0.1"
   },
   "scripts": {
     "start": "sails lift",
@@ -22,5 +21,8 @@
   "main": "app.js",
   "repository": "",
   "author": "",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-angular-templates": "~0.5.0"
+  }
 }

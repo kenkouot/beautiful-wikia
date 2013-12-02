@@ -37,7 +37,7 @@
 
   </head>
 
-  <body ng-controller="BodyCtrl">
+  <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
     <header class="row">
       <h1 ng-bind="headerText"></h1>
     </header>
@@ -47,9 +47,9 @@
     <footer class="row">
       <h1>Footer</h1/>
     </footer>
-
-
-
+    <wk-modal show-when="modals.articleInput">
+      <wk-article-input />
+    </wk-modal>
 
     <!--
         Client-side Templates

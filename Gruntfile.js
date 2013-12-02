@@ -131,14 +131,15 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-concat/tasks');
   grunt.loadTasks(depsPath + '/grunt-sails-linker/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-jst/tasks');
-  // Precompilation of ng-templates
-  grunt.loadTasks(depsPath + '/grunt-angular-templates/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-watch/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-uglify/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-cssmin/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
-  grunt.loadTasks( 'node_modules/grunt-contrib-sass/tasks');
+
+  grunt.loadTasks( 'node_modules/grunt-contrib-sass/tasks' );
+  // Precompilation of ng-templates
+  grunt.loadTasks( 'node_modules/grunt-angular-templates/tasks' );
 
   // Project configuration.
   grunt.initConfig({
@@ -184,6 +185,20 @@ module.exports = function (grunt) {
 
         files: {
           '.tmp/public/jst.js': templateFilesToInject
+        }
+      }
+    },
+
+    ngtemplates: {
+      dev: {
+        cwd: 'assets/templates/angular',
+        src: '**.html',
+        dest: 'assets/scripts/ngTemplates.js',
+        options: {
+          bootstrap: function( module, script ) {
+            return '/** This file is automatically compiled from a Grunt task **/\n' +
+                   'define([], function() {\nreturn function( $templateCache ) {' + script + '};\n});';
+          }
         }
       }
     },
@@ -458,6 +473,7 @@ module.exports = function (grunt) {
   grunt.registerTask('compileAssets', [
     'clean:dev',
     'jst:dev',
+    'ngtemplates:dev',
     // 'less:dev',
     'sass:dev',
     'copy:dev',

@@ -1,0 +1,16 @@
+.modal-bg {
+	@extend .full-height-width;
+	background-color: $modal-bg-color-dark;
+	display: none;
+	left: 0;
+	position: fixed;
+	top: 0;
+}
+
+.modal {
+	@extend .block-center;
+	background-color: $modal-bg-color-light;
+	margin-top: 100px;
+	padding: 30px;
+	width: 60%;
+}
