@@ -2,8 +2,9 @@ define([
   'controllers/module'
 ], function( exports ) {
   'use strict';
-  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', function( $scope, $rootScope ) {
+  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', 'article', function( $scope, $rootScope, article ) {
 
+    console.log( article );
     $scope.closeModals = function() {
       $rootScope.$emit( 'modal:closeAll' );
     };

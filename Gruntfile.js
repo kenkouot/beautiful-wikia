@@ -452,6 +452,7 @@ module.exports = function (grunt) {
         // Assets to watch:
         files: [
           'assets/**/*',
+          'assets/**/**/*',
           'assets/scss/*',
           'assets/scss/**/*',
           'assets/scss/**/**/*'

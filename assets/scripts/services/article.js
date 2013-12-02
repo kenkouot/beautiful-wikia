@@ -2,7 +2,7 @@ define([
   'services/module'
 ], function( exports ) {
   'use strict';
-  exports.factory( 'article', [ '$ngResource', function( $resource ) {
+  exports.factory( 'article', [ '$resource', function( $resource ) {
     console.log( $resource );
   }]);
 
