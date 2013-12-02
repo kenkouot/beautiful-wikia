@@ -5,20 +5,16 @@ define([
     return {
       restrict: 'E',
       templateUrl: 'article-input.html',
-      transclude: true
+      transclude: true,
+      link: function( scope, $elem, attrs ) {
+        $elem.on( 'submit', function( evt ) {
+          var val = $elem.find( 'input' ).val();
+          scope.$apply(function( scope ) {
+            var article = scope.setArticle( val );
+            console.log( article.status );
+          });
+        });
+      }
     };
   });
-  // exports.directive( 'wkArticleInputTrigger', [ '$document', function( $document ) {
-  //   return {
-  //     restrict: 'A',
-  //     link: function( scope, $elem, attrs ) {
-  //       var input = attrs.wkArticleInputTrigger;
-  //       $document.on( 'keypress', function( evt ) {
-  //         // user presses ? key
-  //         if ( evt.which === input ) {
-  //         }
-  //       });
-  //     }
-  //   };
-  // }]);
 });

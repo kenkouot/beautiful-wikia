@@ -4,7 +4,7 @@ return function( $templateCache ) {  'use strict';
 
   $templateCache.put('article-input.html',
     "<div class=\"article-input\">\n" +
-    "\t<form ng-submit=\"setArticle( $event )\">\n" +
+    "\t<form>\n" +
     "\t\t<input name=\"url\" class=\"text-center\" type=\"url\" placeholder=\"Enter the URL of your article\">\n" +
     "\t</form>\n" +
     "</div>\n"
