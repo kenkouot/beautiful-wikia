@@ -1,6 +1,7 @@
 define([
   'controllers/module'
 ], function( exports ) {
+  'use strict';
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', function( $scope, $rootScope ) {
 
     $scope.closeModals = function() {

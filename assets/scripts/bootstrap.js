@@ -6,6 +6,7 @@ define([
   'angular',
   'app'
 ], function( require, angular, app ) {
+  'use strict';
   angular.element( document ).ready(function() {
     angular.bootstrap( document, [ app.name ]);
   });

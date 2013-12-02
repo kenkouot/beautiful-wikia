@@ -1,6 +1,7 @@
 define([
   'directives/module'
 ], function( exports ) {
+  'use strict';
   exports.directive( 'wkArticleInput', function() {
     return {
       restrict: 'E',

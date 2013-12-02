@@ -3,6 +3,7 @@
  * @description Sets up app dependencies and exports various globals
  */
 (function( window ) {
+  'use strict';
   var path,
       componentsPath,
       env;
