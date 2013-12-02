@@ -7,15 +7,20 @@ Beautiful Wikia
 2. [Overview](#overview)
 4. [Project Management](#project-management)
 
+## Dependencies
+* ruby, node.js, sass
+* On a fresh Mac with [Homebrew](http://brew.sh/) installed:
+ * `brew install node ruby`
+ * `sudo gem install sass`
+* *Optional:* For CLI grunt tool `npm install -g grunt-cli`
+
 ## Installation
 * `git clone git@github.com:kenkouot/beautiful-wikia.git`
-* Install Node.js
+* `cd beautiful-wikia`
 * `npm install` *(it will ask you for your sudo password to install global modules)*
 * `bower install`
 * Type `sails lift` in CLI to start application
 * Visit [`localhost:1337`](http://localhost:1337) to view the app
-* For sass compilation `gem install sass`
-* *Optional:* For CLI grunt tool `npm install -g grunt-cli`
 
 ## Overview
 Overall, this app is a simple concept. We want to distill the Wikia article experience, showing the parts that users really care about. This projects aims to reduce the complexity of the reading experience and bring it up to parity with modern expectations of design and development.
