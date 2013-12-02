@@ -3,8 +3,6 @@ define([
 ], function( exports ) {
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', function( $scope, $rootScope ) {
 
-    $scope.headerText = 'Hello World!';
-
     $scope.closeModals = function() {
       $rootScope.$emit( 'modal:closeAll' );
     };
