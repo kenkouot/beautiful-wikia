@@ -11,6 +11,12 @@ return function( $templateCache ) {  'use strict';
   );
 
 
+  $templateCache.put('article.html',
+    "<div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('modal.html',
     "<div class=\"modal-bg\">\n" +
     "\t<div class=\"modal\">\n" +

@@ -442,7 +442,6 @@ module.exports = function (grunt) {
 
     watch: {
       api: {
-
         // API files to watch:
         files: ['api/**/*'],
         tasks: ['compileAssets']
@@ -452,7 +451,7 @@ module.exports = function (grunt) {
         // Assets to watch:
         files: [
           'assets/**/*',
-          'assets/**/**/*',
+          'assets/scripts/**/*',
           'assets/scss/*',
           'assets/scss/**/*',
           'assets/scss/**/**/*'

@@ -44,12 +44,12 @@ module.exports = {
     }
 
     Parsoid.retrieveHTML( apiEndpoint, article )
-      .once( 'complete', function( data ) {
+      .once( 'complete', function( response ) {
         res.json({
           api: apiEndpoint,
           article: article,
           contentType: 'html',
-          content: data
+          content: response
         });
       });
   },

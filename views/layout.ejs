@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="/linker/styles/app.css">
     <!--STYLES END-->
     <script type="text/javascript">
+      // Export variables from server here
       window.wikia = {};
       wikia.env = <%- JSON.stringify( env ) %>;
     </script>
@@ -39,7 +40,7 @@
 
   <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
     <header class="row">
-      <h1>Header</h1>
+      <h1 ng-bind="title"></h1>
     </header>
     <div class="content row">
       <%- body %>

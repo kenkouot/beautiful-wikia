@@ -2,9 +2,18 @@ define([
   'controllers/module'
 ], function( exports ) {
   'use strict';
-  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', 'article', function( $scope, $rootScope, article ) {
+  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', 'article', function( $scope, $rootScope, Article ) {
 
-    console.log( article );
+    $scope.article = null;
+
+    $scope.$watch( 'article', function( newVal, oldVal ) {
+      if ( newVal ) {
+        console.log(newVal);
+        $scope.articleContent = newVal.content.html;
+        $scope.title = newVal.content.title;
+      }
+    });
+
     $scope.closeModals = function() {
       $rootScope.$emit( 'modal:closeAll' );
     };
@@ -52,6 +61,9 @@ define([
           errors: errors
         };
       } else {
+        Article.get( $scope.wikiApiUri, $scope.articleStringId, function( data ) {
+          $scope.article = data;
+        });
         this.closeModals();
         return {
           status: 'success'
