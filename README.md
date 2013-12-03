@@ -9,6 +9,7 @@ Beautiful Wikia
 
 ## Dependencies
 * ruby, node.js, sass
+	* Make sure node is at least at 0.10.22 if you are on OS X 10.8+ to avoid a bug with grunt-watch [*Source*](https://github.com/gruntjs/grunt-contrib-watch/issues/204)
 * On a fresh Mac with [Homebrew](http://brew.sh/) installed:
  * `brew install node ruby`
  * `sudo gem install sass`
