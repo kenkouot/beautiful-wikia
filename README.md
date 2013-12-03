@@ -3,8 +3,9 @@ Beautiful Wikia
 
 *This is a project for Wikia's winter 2013 Hackathon*
 
-1. [Installation](#installation)
-2. [Overview](#overview)
+1. [Dependencies](#dependencies)
+2. [Installation](#installation)
+3. [Overview](#overview)
 4. [Project Management](#project-management)
 
 ## Dependencies
