@@ -15,6 +15,10 @@ Beautiful Wikia
  * `brew install node ruby`
  * `sudo gem install sass`
 * *Optional:* For CLI grunt tool `npm install -g grunt-cli`
+* Parsoid: (Required for getting articles!)
+	* `git clone git@github.com:kenkouot/mediawiki-extensions-Parsoid.git`
+	* `cd mediawiki-extensions-Parsoid/js && sudo npm install`
+	* To run Parsoid, `node js/server.js` and Parsoid will run on localhost:8000
 
 ## Installation
 * `git clone git@github.com:kenkouot/beautiful-wikia.git`
