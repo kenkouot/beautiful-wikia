@@ -5,12 +5,13 @@ define([
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', 'article', function( $scope, $rootScope, Article ) {
 
     $scope.article = null;
+    $scope.pageHeader = 'No article loaded';
 
     $scope.$watch( 'article', function( newVal, oldVal ) {
       if ( newVal ) {
         console.log(newVal);
         $scope.articleContent = newVal.content.html;
-        $scope.title = newVal.content.title;
+        $scope.pageHeader = newVal.content.title;
       }
     });
 

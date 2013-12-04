@@ -1,0 +1,9 @@
+.hero {
+	@extend .z-min;
+	background-color: $hero-bg;
+	height: 300px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}

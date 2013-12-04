@@ -1,3 +1,7 @@
 body {
 	background: $body-bg;
 }
+
+body > header {
+	background-color: salmon;
+}

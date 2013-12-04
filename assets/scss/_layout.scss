@@ -1,3 +1,7 @@
+.content-wrapper {
+	margin-top: 190px;
+}
+
 .full-height-width {
 	height: 100%;
 	width: 100%;
@@ -5,4 +9,15 @@
 
 .block-center {
 	margin: 0 auto;
+}
+
+.z-min { z-index: -1; }
+
+.z-max { z-index: 9999; }
+
+/* Generate nine levels of z-index classes */
+@for $i from 1 through 9 {
+	.z-#{ $i } {
+		z-index: $i * 1000;
+	}
 }

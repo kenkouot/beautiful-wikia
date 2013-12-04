@@ -15,6 +15,6 @@ module.exports = {
      */
   },
   retrieveHTML: function( api, article ) {
-    return restler.get( 'http://localhost:8888/' + api + '/' + article );
+    return restler.get( 'http://localhost:8000/' + api + '/' + article );
   }
 };

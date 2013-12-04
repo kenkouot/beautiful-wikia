@@ -39,15 +39,39 @@
   </head>
 
   <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
-    <header class="row">
-      <h1 ng-bind="title"></h1>
-    </header>
-    <div class="content row">
-      <%- body %>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">[&nbsp;&nbsp;]</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="#">Search</a></li>
+        </ul>
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Right Nav Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#">Right Button with Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row content-wrapper">
+      <header class="row">
+        <h1 ng-bind="pageHeader"></h1>
+      </header>
+      <div class="content row">
+        <%- body %>
+      </div>
     </div>
-    <footer class="row">
-      <h1>Footer</h1/>
-    </footer>
+    <%- partial('partials/footer') %>
+    <div class="hero">&nbsp;</div>
     <wk-modal show-when="modals.articleInput">
       <wk-article-input />
     </wk-modal>
