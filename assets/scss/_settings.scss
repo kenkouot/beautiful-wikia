@@ -1,7 +1,14 @@
-// Import 'PT Serif'
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+/*
+ * Application specific SCSS variables
+ * For variables specifc to Foundation, please set those in /assets/scss/foundation/_setting.scss
+ */
+
+/* Import Merriweather */
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic,900,900italic);
 
 $body-bg: #fff;
+/* Article page top header area */
 $hero-bg: #ececec;
+/* Modal Variables */
 $modal-bg-color-dark: rgba( 0, 0, 0, .5 );
 $modal-bg-color-light: #fff;
