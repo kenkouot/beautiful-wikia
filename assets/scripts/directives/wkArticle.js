@@ -10,7 +10,7 @@ define([
     return {
       // restricts this directive to just tag elements eg. <wk-article>
       restrict: 'E',
-      template: '<div></div>',
+      template: '<article ng-class="{ invisible: changing }"></article>',
       link: function( scope, $elem, attrs ) {
 
         function bindLinks() {

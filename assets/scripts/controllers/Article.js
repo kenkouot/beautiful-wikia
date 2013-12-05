@@ -14,6 +14,10 @@ define([
         }
       };
 
+      $scope.$on( '$locationChangeStart', function() {
+        $rootScope.$emit( 'article:changing' );
+      });
+
       $scope.wikiBaseHref = 'http://' + $routeParams.wiki + '.wikia.com/';
       wikiApi = $scope.wikiBaseHref + 'api.php';
       $scope.article = null;

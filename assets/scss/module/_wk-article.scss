@@ -1,6 +1,5 @@
-.hero-title {
+wk-article > article {
 	@include transition( opacity $global-transition-speed ease-out );
-	color: $hero-text-color;
 	opacity: 1;
 
 	&.invisible {

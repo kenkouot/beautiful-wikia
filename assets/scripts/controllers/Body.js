@@ -7,6 +7,10 @@ define([
       $scope.pageHeader = 'Beautiful Wikia';
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title.replace( /_/g, ' ' );
+        $scope.changing = false;
+      });
+      $rootScope.$on( 'article:changing', function( data, title ) {
+        $scope.changing = true;
       });
 
       $scope.closeModals = function() {
