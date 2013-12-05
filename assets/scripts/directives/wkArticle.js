@@ -18,18 +18,18 @@ define([
           if ( !$links.length ) return false;
           $links.on( 'click', function( evt ) {
             var $link,
-                fullLink,
+                route,
                 isImageLink,
                 href;
 
             evt.preventDefault();
             $link = $( this );
             href = $link.attr( 'href' );
-            fullLink = [ '/article', $routeParams.wiki, href.slice( 2 ) ].join( '/' );
+            route = [ '/article', $routeParams.wiki, href.slice( 2 ) ].join( '/' );
             isImageLink = !!$link.find( 'img' ).length;
 
             if ( !isImageLink ) {
-              $location.path( fullLink );
+              $location.path( route );
               $( 'body' ).animate({
                 scrollTop: 0
               }, 200 );
