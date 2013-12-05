@@ -19,9 +19,7 @@ return function( $templateCache ) {  'use strict';
 
 
   $templateCache.put('hero-image.html',
-    "<h1>Hi Zack</h1>\n" +
-    "<br />\n" +
-    "<h1 id=\"look_at_me\">LOOK AT ME</h1>\n"
+    ""
   );
 
 

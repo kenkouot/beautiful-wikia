@@ -29,7 +29,9 @@ define([
             isImageLink = !!$link.find( 'img' ).length;
 
             if ( !isImageLink ) {
+              console.log( route );
               $location.path( route );
+              scope.$apply();
               $( 'body' ).animate({
                 scrollTop: 0
               }, 200 );
