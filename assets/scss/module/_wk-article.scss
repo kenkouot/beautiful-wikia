@@ -1,8 +1,4 @@
 wk-article > article {
-	@include transition( opacity $global-transition-speed ease-out );
+	@extend .fade;
 	opacity: 1;
-
-	&.invisible {
-		@extend .invisible;
-	}
 }

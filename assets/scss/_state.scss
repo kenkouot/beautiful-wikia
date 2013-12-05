@@ -1,3 +1,19 @@
 .invisible {
 	opacity: 0;
 }
+
+.opaque {
+	opacity: 1;
+}
+
+.fade {
+	@include transition( opacity $global-transition-speed ease-in-out $global-transition-speed );
+
+	&.invisible {
+		@extend .invisible;
+	}
+
+	&.opaque {
+		@extend .opaque;
+	}
+}

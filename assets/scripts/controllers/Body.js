@@ -5,6 +5,7 @@ define([
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location',
     function( $scope, $rootScope, $location ) {
       $scope.pageHeader = 'Beautiful Wikia';
+      $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title.replace( /_/g, ' ' );
         $scope.changing = false;

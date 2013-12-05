@@ -1,9 +1,5 @@
 .hero-title {
-	@include transition( opacity $global-transition-speed ease-out );
+	@extend .fade;
 	color: $hero-text-color;
 	opacity: 1;
-
-	&.invisible {
-		@extend .invisible;
-	}
 }

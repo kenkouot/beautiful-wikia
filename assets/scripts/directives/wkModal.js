@@ -1,3 +1,11 @@
+/**
+ * wkModal.js
+ * @description A generic modal that allows for transclusion
+ * @example
+ * <wk-modal>
+ *   <my-transcluded-element>Some text</my>
+ * </wk-modal>
+ */
 define([
   'angular',
   'directives/module'
