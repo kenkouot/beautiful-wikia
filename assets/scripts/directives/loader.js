@@ -5,5 +5,6 @@
 define([
   'directives/wkArticle',
   'directives/wkArticleInput',
+  'directives/wkHeroImage',
   'directives/wkModal'
 ], function() {});
