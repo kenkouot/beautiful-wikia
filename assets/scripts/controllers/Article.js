@@ -2,8 +2,8 @@ define([
   'controllers/module'
 ], function( exports ) {
   'use strict';
-  exports.controller( 'ArticleCtrl', [ '$scope', '$rootScope', '$routeParams', 'article',
-    function( $scope, $rootScope, $routeParams, Article ) {
+  exports.controller( 'ArticleCtrl', [ '$scope', '$rootScope', '$routeParams', '$location', 'article',
+    function( $scope, $rootScope, $routeParams, $location, Article ) {
       var wikiApi,
           errorObj;
 
@@ -20,6 +20,9 @@ define([
 
       Article.get( wikiApi, $routeParams.name, function( data ) {
         if ( typeof data.content === 'object') {
+          if ( data.content.redirect) {
+            return $location.path( '/article/' + $routeParams.wiki + '/' + data.content.html );
+          }
           $scope.article = data;
         } else {
           $scope.article = errorObj;

@@ -29,12 +29,12 @@ define([
             isImageLink = !!$link.find( 'img' ).length;
 
             if ( !isImageLink ) {
-              console.log( route );
-              $location.path( route );
-              scope.$apply();
               $( 'body' ).animate({
                 scrollTop: 0
-              }, 200 );
+              }, 200, function() {
+                $location.path( route );
+                scope.$apply();
+              });
             } else {
               window.open( scope.wikiBaseHref + href.slice( 2 ), '_blank' );
             }
