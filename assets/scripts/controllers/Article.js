@@ -4,12 +4,26 @@ define([
   'use strict';
   exports.controller( 'ArticleCtrl', [ '$scope', '$rootScope', '$routeParams', 'article',
     function( $scope, $rootScope, $routeParams, Article ) {
+      var wikiApi,
+          errorObj;
+
+      errorObj = {
+        content: {
+          html: 'Sorry, there was an error retrieving your article',
+          title: 'Error'
+        }
+      };
+
       $scope.wikiBaseHref = 'http://' + $routeParams.wiki + '.wikia.com/';
-      var wikiApi = $scope.wikiBaseHref + 'api.php';
+      wikiApi = $scope.wikiBaseHref + 'api.php';
       $scope.article = null;
 
       Article.get( wikiApi, $routeParams.name, function( data ) {
-        $scope.article = data;
+        if ( typeof data.content === 'object') {
+          $scope.article = data;
+        } else {
+          $scope.article = errorObj;
+        }
       });
 
       $scope.$watch( 'article', function( newVal, oldVal ) {
