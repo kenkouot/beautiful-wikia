@@ -4,7 +4,7 @@ define([
   'use strict';
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location',
     function( $scope, $rootScope, $location ) {
-      $scope.pageHeader = 'No article loaded';
+      $scope.pageHeader = 'Beautiful Wikia';
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title;
       });

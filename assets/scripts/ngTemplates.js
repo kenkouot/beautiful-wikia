@@ -7,6 +7,8 @@ return function( $templateCache ) {  'use strict';
     "\t<form>\n" +
     "\t\t<input name=\"url\" class=\"text-center\" type=\"url\" placeholder=\"Enter the URL of your article\">\n" +
     "\t</form>\n" +
+    "\t<p>Press <kbd>Return</kbd> to view your article.</p>\n" +
+    "\tPress <kbd>Esc</kbd> or click anywhere outside this box to return.\n" +
     "</div>\n"
   );
 
@@ -20,6 +22,15 @@ return function( $templateCache ) {  'use strict';
     "<h1>Hi Zack</h1>\n" +
     "<br />\n" +
     "<h1 id=\"look_at_me\">LOOK AT ME</h1>\n"
+  );
+
+
+  $templateCache.put('index.html',
+    "<h4>Welcome to our 2013 Winter Hackathon project</h4>\n" +
+    "<p>To begin the experience, pick an article from Wikia and copy the URL from your browser's address bar. The URL should look something like this:</p>\n" +
+    "<blockquote>http://batman.wikia.com/wiki/Batman</blockquote>\n" +
+    "<p>Then, hit the <kbd>?</kbd> key on your keyboard. Paste your URL and hit <kbd>Return</kbd> and voila! From there, feel free the navigate the article links just like you normally would. Enjoy!</p>\n" +
+    "\n"
   );
 
 
