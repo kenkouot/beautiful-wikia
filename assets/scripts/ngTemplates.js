@@ -12,8 +12,7 @@ return function( $templateCache ) {  'use strict';
 
 
   $templateCache.put('article.html',
-    "<div>\n" +
-    "</div>\n"
+    "<wk-article></wk-article>\n"
   );
 
 
