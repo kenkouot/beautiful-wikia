@@ -4,7 +4,8 @@
 define([
   'require',
   'angular',
-  'app'
+  'app',
+  'routes'
 ], function( require, angular, app ) {
   'use strict';
   angular.element( document ).ready(function() {

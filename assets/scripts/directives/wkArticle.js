@@ -6,19 +6,47 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkArticle', function() {
+  exports.directive( 'wkArticle', [ '$routeParams', '$location', function( $routeParams, $location ) {
     return {
       // restricts this directive to just tag elements eg. <wk-article>
       restrict: 'E',
-      templateUrl: 'article.html',
+      template: '<div></div>',
       link: function( scope, $elem, attrs ) {
+
+        function bindLinks() {
+          var $links = $elem.find( 'a' );
+          if ( !$links.length ) return false;
+          $links.on( 'click', function( evt ) {
+            var $link,
+                fullLink,
+                isImageLink,
+                href;
+
+            evt.preventDefault();
+            $link = $( this );
+            href = $link.attr( 'href' );
+            fullLink = [ '/article', $routeParams.wiki, href.slice( 2 ) ].join( '/' );
+            isImageLink = !!$link.find( 'img' ).length;
+
+            if ( !isImageLink ) {
+              $location.path( fullLink );
+              $( 'body' ).animate({
+                scrollTop: 0
+              }, 200 );
+            } else {
+              window.open( scope.wikiBaseHref + href.slice( 2 ), '_blank' );
+            }
+          });
+        }
+
         scope.$watch( 'article', function( newVal, oldVal ) {
           if ( newVal ) {
             // replace container contents when new article content arrives
             $elem.html( newVal.content.html );
+            bindLinks();
           }
         });
       }
     };
-  });
+  }]);
 });
