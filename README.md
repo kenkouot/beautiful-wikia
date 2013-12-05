@@ -18,7 +18,7 @@ Beautiful Wikia
 * Parsoid: (Required for getting articles!)
 	* `git clone git@github.com:kenkouot/mediawiki-extensions-Parsoid.git`
 	* `cd mediawiki-extensions-Parsoid/js && sudo npm install`
-	* To run Parsoid, `node js/server.js` and Parsoid will run on localhost:8000
+	* To run Parsoid, `node js/api/server.js` and Parsoid will run on localhost:8000
 
 ## Installation
 * `git clone git@github.com:kenkouot/beautiful-wikia.git`
