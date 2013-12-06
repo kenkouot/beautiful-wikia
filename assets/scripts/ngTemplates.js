@@ -14,7 +14,7 @@ return function( $templateCache ) {  'use strict';
 
 
   $templateCache.put('article.html',
-    "<wk-article></wk-article>\n"
+    "<wk-article ng-class=\"{ opaque: !changing }\"></wk-article>\n"
   );
 
 
