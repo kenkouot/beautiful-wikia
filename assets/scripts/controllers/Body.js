@@ -38,14 +38,14 @@ define([
             regex,
             errors;
 
-        regex = /^(.*)(wiki\/)([^.]+)?$/;
+        regex = /^(.*)(wiki)?(\/)([^.]+)?$/;
         parts = uri.match( regex );
 
         errors = [];
 
         if ( parts ) {
           if ( !parts[ 1 ] ) errors.push( 'Invalid URL' );
-          if ( !parts[ 3 ] ) errors.push( 'Invalid Article' );
+          if ( !parts[ parts.length - 1 ] ) errors.push( 'Invalid Article' );
 
         } else {
           errors.push( 'Invalid URL' );
@@ -61,7 +61,7 @@ define([
           $location.path(
             '/article/' +
             parts[ 1 ].split('.')[ 0 ].slice(7) +
-            '/' + parts[ 3 ]
+            '/' + parts[ parts.length - 1 ]
           );
 
           this.closeModals();

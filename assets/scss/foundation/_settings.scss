@@ -19,7 +19,7 @@
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+$rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -42,7 +42,7 @@
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -999,15 +999,15 @@
 $include-html-type-classes: $include-html-classes !default;
 
 // We use these to control header font styles
-// $header-font-family: join("Open Sans", $body-font-family) !default;
+$header-font-family: join("Open Sans", $body-font-family);
 // $header-font-weight: 300 !default;
-$header-font-weight: 400;
+$header-font-weight: 600;
 // $header-font-style: normal !default;
 // $header-font-color: #222 !default;
 // $header-line-height: 1.4 !default;
 // $header-top-margin: .2rem !default;
 // $header-bottom-margin: .5rem !default;
-// $header-text-rendering: optimizeLegibility !default;
+$header-text-rendering: optimizeLegibility !default;
 // 
 // // We use these to control header font sizes
 // $h1-font-size: rem-calc(44) !default;
@@ -1029,15 +1029,15 @@ $header-font-weight: 400;
 // $small-font-color: lighten($header-font-color, 30%) !default;
 // 
 // // We use these to style paragraphs
-$paragraph-font-family: 'Merriweather, Georgia, serif' !default;
+$paragraph-font-family: join("Merriweather", $body-font-family);
 // $paragraph-font-weight: normal !default;
-$paragraph-font-size: 1.2rem;
+$paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6 !default;
 // $paragraph-margin-bottom: rem-calc(20) !default;
 // $paragraph-aside-font-size: rem-calc(14) !default;
 // $paragraph-aside-line-height: 1.35 !default;
 // $paragraph-aside-font-style: italic !default;
-// $paragraph-text-rendering: optimizeLegibility !default;
+$paragraph-text-rendering: optimizeLegibility !default;
 // 
 // // We use these to style <code> tags
 // $code-color: darken($alert-color, 15%) !default;
