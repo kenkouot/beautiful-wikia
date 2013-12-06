@@ -1,0 +1,7 @@
+.article-footer {
+	display: none;
+
+	&.show {
+		@extend .show;
+	}
+}

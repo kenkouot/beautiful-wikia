@@ -6,15 +6,10 @@
  * @docs		:: http://sailsjs.org/#!documentation/models
  */
 
-var restler = require( 'restler' );
-
 module.exports = {
   attributes: {
     /* e.g.
      nickname: 'string'
      */
-  },
-  retrieveHTML: function( api, article ) {
-    return restler.get( 'http://localhost:8000/' + api + '/' + article );
   }
 };

@@ -1,4 +1,3 @@
-/* global Parsoid */
 /**
  * ParsoidController
  *
@@ -16,6 +15,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+var restler = require( 'restler' );
+
 module.exports = {
   /**
    * Overrides for the settings in `config/controllers.js`
@@ -27,7 +28,8 @@ module.exports = {
   index: function( req, res ) {
     var apiEndpoint,
         article,
-        errors;
+        errors,
+        client;
 
     apiEndpoint = req.query.api;
     article = req.query.article;
@@ -43,7 +45,8 @@ module.exports = {
       });
     }
 
-    Parsoid.retrieveHTML( apiEndpoint, article )
+    // make external request to custom parsoid fork
+    client = restler.get( 'http://localhost:8000/' + apiEndpoint + '/' + article )
       .once( 'complete', function( response ) {
         res.json({
           api: apiEndpoint,

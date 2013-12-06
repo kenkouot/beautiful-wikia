@@ -16,6 +16,7 @@ define([
 
       $scope.$on( '$locationChangeStart', function() {
         $rootScope.$emit( 'article:changing' );
+        $rootScope.articleLoaded = false;
       });
 
       $scope.wikiBaseHref = 'http://' + $routeParams.wiki + '.wikia.com/';
@@ -35,8 +36,10 @@ define([
 
       $scope.$watch( 'article', function( newVal, oldVal ) {
         if ( newVal ) {
+          var title = newVal.content.title;
           $scope.articleContent = newVal.content.html;
-          $rootScope.$emit( 'article:newTitle', newVal.content.title );
+          $rootScope.$emit( 'article:newTitle', title );
+          if ( title && title !== 'Error' ) $rootScope.articleLoaded = true;
         }
       });
   }]);

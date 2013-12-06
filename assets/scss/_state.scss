@@ -6,6 +6,10 @@
 	opacity: 1;
 }
 
+.show {
+	display: block;
+}
+
 .fade {
 	@include transition( opacity $global-transition-speed ease-in-out $global-transition-speed );
 
