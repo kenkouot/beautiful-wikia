@@ -19,7 +19,7 @@ return function( $templateCache ) {  'use strict';
 
 
   $templateCache.put('btn-back-to-top.html',
-    "<a href=\"#top\" ng-transclude></a>\n" +
+    "<a href=\"#top\" class=\"button\" ng-transclude></a>\n" +
     "\n"
   );
 

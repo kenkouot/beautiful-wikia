@@ -1,5 +1,4 @@
 wk-back-to-top {
-	@extend .button;
 	@extend .fade;
 	@extend .invisible;
 	bottom: 0;
@@ -8,7 +7,6 @@ wk-back-to-top {
 	position: fixed;
 
 	a {
-		color: #fff;
 		margin-bottom: 0;
 	}
 }
