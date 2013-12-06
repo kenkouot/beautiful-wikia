@@ -27,6 +27,7 @@ node_modules/
 assets/components/
 
 npm-debug.log
+ngTemplates.js
 
 
 ########################
