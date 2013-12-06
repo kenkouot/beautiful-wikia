@@ -7,11 +7,14 @@ define([
       $scope.pageHeader = 'Beautiful Wikia';
       $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
-        $scope.pageHeader = title.replace( /_/g, ' ' );
+        $scope.pageHeader = title.replace( /_|-/g, ' ' );
         $scope.changing = false;
       });
       $rootScope.$on( 'article:changing', function( data, title ) {
         $scope.changing = true;
+      });
+      $rootScope.$on( 'article:headings', function( data, headings ) {
+        $scope.headings = headings;
       });
 
       $scope.closeModals = function() {

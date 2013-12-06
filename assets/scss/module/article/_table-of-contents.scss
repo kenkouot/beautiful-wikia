@@ -1,0 +1,10 @@
+.table-of-contents {
+	@extend .fade;
+	height: 500px;
+	left: 0;
+	list-style-type: none;
+	margin: 0;
+	overflow: scroll;
+	position: fixed;
+	top: 60px;
+}

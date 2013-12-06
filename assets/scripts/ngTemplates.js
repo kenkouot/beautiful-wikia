@@ -46,5 +46,14 @@ return function( $templateCache ) {  'use strict';
     "</div>\n" +
     "\n"
   );
+
+
+  $templateCache.put('table-of-contents.html',
+    "<ul class=\"table-of-contents\">\n" +
+    "\t<li ng-repeat=\"heading in headings\">\n" +
+    "\t\t<a class=\"indent-{{ heading.level }}\" href=\"#{{ heading.id }}\">{{ heading.text }}</a>\n" +
+    "\t</li>\n" +
+    "</ul>\n"
+  );
 };
 });

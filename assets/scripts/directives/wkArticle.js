@@ -6,13 +6,13 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkArticle', [ '$routeParams', '$location', function( $routeParams, $location ) {
+  exports.directive( 'wkArticle', [ '$routeParams', '$location', '$rootScope', function( $routeParams, $location, $rootScope ) {
     return {
       // restricts this directive to just tag elements eg. <wk-article>
       restrict: 'E',
       // abstract template to templateUrl if this gets any bigger
       // ng-class is for fading in and out on new articles
-      template: '<article"></article>',
+      template: '<article></article>',
       link: function( scope, $elem, attrs ) {
         /**
          * @private
@@ -66,10 +66,27 @@ define([
          * Watches the scopes 'article' object for changes, loads new views on change
          */
         scope.$watch( 'article', function( newVal, oldVal ) {
+          var $headings,
+              headings,
+              heading,
+              i;
           if ( newVal ) {
             // replace container contents when new article content arrives
             $elem.html( newVal.content.html );
             bindLinks();
+
+            $headings = $elem.find( 'h1, h2, h3, h4, h5, h6' );
+
+            headings = [];
+            for ( i = 0; i < $headings.length; i++ ) {
+              heading = $headings[ i ];
+              headings.push({
+                id: heading.id,
+                text: heading.textContent,
+                level: parseInt( heading.nodeName.slice( 1 ), 10 )
+              });
+            }
+            $rootScope.$emit( 'article:headings', headings );
           }
         });
       }

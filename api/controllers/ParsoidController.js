@@ -39,21 +39,23 @@ module.exports = {
     if ( !article ) errors.push( 'article' );
 
     if ( errors.length ) {
-      res.send( 500, {
+      return res.send( 500, {
         message: 'Error: insufficient arguments supplied',
         invalidParams: errors
       });
     }
 
     // make external request to custom parsoid fork
-    client = restler.get( 'http://localhost:8000/' + apiEndpoint + '/' + article )
-      .once( 'complete', function( response ) {
-        res.json({
-          api: apiEndpoint,
-          article: article,
-          contentType: 'html',
-          content: response
-        });
+    client = restler.get( 'http://localhost:8000/' + apiEndpoint + '/' + article );
+    client.once( 'complete', function( response ) {
+      client.removeAllListeners( 'error' );
+
+      res.json({
+        api: apiEndpoint,
+        article: article,
+        contentType: 'html',
+        content: response
       });
+    });
   },
 };

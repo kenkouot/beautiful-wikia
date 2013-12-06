@@ -22,6 +22,7 @@ define([
       $scope.wikiBaseHref = 'http://' + $routeParams.wiki + '.wikia.com/';
       wikiApi = $scope.wikiBaseHref + 'api.php';
       $scope.article = null;
+      $rootScope.headings = [];
 
       Article.get( wikiApi, $routeParams.name, function( data ) {
         if ( typeof data.content === 'object') {
