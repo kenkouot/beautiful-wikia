@@ -450,11 +450,12 @@ module.exports = function (grunt) {
 
         // Assets to watch:
         files: [
-          'assets/**/*',
-          'assets/scripts/**/*',
           'assets/scss/*',
           'assets/scss/**/*',
-          'assets/scss/**/**/*'
+          'assets/scss/**/**/*',
+          'assets/templates/**/*',
+          'assets/scripts/*',
+          'assets/scripts/**/*'
         ],
 
         // When assets are changed:
