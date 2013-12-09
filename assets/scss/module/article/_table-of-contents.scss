@@ -1,41 +1,41 @@
-.table-of-contents {
+$toc-width: 160px;
+wk-table-of-contents {
 	@extend .fade;
-  background-color: #222;
   font-family: $header-font-family;
   font-size: .85rem;
-	height: 100%;
-	left: 0;
-	list-style-type: none;
-	margin: 0;
-	overflow: scroll;
-	position: fixed;
-	top: 45px;
+	margin-left: -$toc-width;
+	position: absolute;
+	width: $toc-width;
 
-  li {
-    background-color: black;
-    margin-bottom: 1px;
-  }
-	a {
-    display: block;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 160px;
-    white-space: nowrap;
+	.table-of-contents {
+		font-family: inherit;
+		font-size: inherit;
+		list-style-type: none;
+		margin: 10px 0 0 0;
+
+		a {
+			display: block;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			width: $toc-width;
+			white-space: nowrap;
+		}
+
+		.indent-2 {
+			padding: 3px 10px 3px 0;
+		}
+
+		.indent-3 {
+			padding: 3px 10px 3px 10px;
+		}
+
+		.indent-4 {
+			padding: 3px 10px 3px 20px;
+		}
+
+		.indent-4, .indent-5, .indent-6 {
+			@extend .hide;
+		}
 	}
-
-  .indent-2 {
-    padding: 3px 10px 3px 10px;
-  }
-
-  .indent-3 {
-    padding: 3px 10px 3px 20px;
-  }
-
-  .indent-4 {
-    padding: 3px 10px 3px 30px;
-  }
-
-  .indent-4, .indent-5, .indent-6 {
-    @extend .hide;
-  }
 }
+
