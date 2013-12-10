@@ -32,7 +32,6 @@ define([
           });
 
           scope.$watch( 'headings', function( newVal ) {
-            console.log( newVal, 'yeah' );
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
                 $( 'body, html' ).animate({
