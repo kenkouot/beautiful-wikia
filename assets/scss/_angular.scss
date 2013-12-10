@@ -1,0 +1,6 @@
+/*
+ * This is mostly to handle some basic normalization for
+ * Angular's native elements. Different browsers seem to handle them differently.
+ * Do NOT use this to style your own directives!
+ */
+@import 'angular/ng-view';

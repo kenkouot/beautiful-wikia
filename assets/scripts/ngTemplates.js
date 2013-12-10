@@ -49,8 +49,10 @@ return function( $templateCache ) {  'use strict';
 
 
   $templateCache.put('table-of-contents.html',
-    "<i class=\"fa fa-list\"></i>\n" +
-    "<span>Table of Contents</span>\n" +
+    "<span ng-show=\"headings.length\">\n" +
+    "\t<i class=\"fa fa-list\"></i>\n" +
+    "\tTable of Contents\n" +
+    "</span>\n" +
     "<ul class=\"table-of-contents\">\n" +
     "\t<li ng-repeat=\"heading in headings\">\n" +
     "\t\t<a class=\"indent-{{ heading.level }}\" href=\"#{{ heading.id }}\">{{ heading.text }}</a>\n" +

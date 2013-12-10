@@ -1,5 +1,7 @@
-<i class="fa fa-list"></i>
-<span>Table of Contents</span>
+<span ng-show="headings.length">
+	<i class="fa fa-list"></i>
+	Table of Contents
+</span>
 <ul class="table-of-contents">
 	<li ng-repeat="heading in headings">
 		<a class="indent-{{ heading.level }}" href="#{{ heading.id }}">{{ heading.text }}</a>

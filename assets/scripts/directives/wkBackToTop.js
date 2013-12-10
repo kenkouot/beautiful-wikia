@@ -22,7 +22,7 @@ define([
 
         $elem.find( 'a' ).on( 'click', function( evt ) {
           evt.preventDefault();
-          $( 'body' ).animate({
+          $( 'body, html' ).animate({
             scrollTop: 0
           }, 200 );
         });
