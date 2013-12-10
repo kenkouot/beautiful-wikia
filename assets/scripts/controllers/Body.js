@@ -16,7 +16,7 @@ define([
       $rootScope.$on( 'article:headings', function( data, headings ) {
         $scope.headings = headings;
       });
-      $rootScope.$on( 'article:scolldetected', function( data, headingId ) {
+      $rootScope.$on( 'article:scollDetected', function( data, headingId ) {
         $scope.headingId = headingId;
       });
       

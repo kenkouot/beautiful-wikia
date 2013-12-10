@@ -270,7 +270,7 @@ define([
             }
 
             $headings.on('scrollSpy:enter', function() {
-              $rootScope.$emit( 'article:scolldetected', $(this).attr('id'));
+              $rootScope.$emit( 'article:scollDetected', $(this).attr('id'));
             });
             $headings.scrollSpy();
             
