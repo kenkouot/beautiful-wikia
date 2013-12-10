@@ -21,3 +21,10 @@
 		z-index: $i * 1000;
 	}
 }
+
+/* Fixes content to left side (with room for ToC) on smaller windows */
+@media (max-width: 1290px) {
+	.row.content-wrapper {
+		margin-left: 240px;
+	}
+}
