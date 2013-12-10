@@ -6,8 +6,8 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkTableOfContents', [
-    function() {
+  exports.directive( 'wkTableOfContents', [ '$rootScope',
+    function( $rootScope ) {
       return {
         /**
          * @param {Object} scope refers to the BodyController, or whatever controller is in scope
@@ -31,10 +31,10 @@ define([
             }
           });
 
-          scope.$watch('headingId', function(newVal) {
-            var $navz = $elem.find('#nav-' + newVal);
+          scope.$watch( 'headingId', function(newVal) {
+            var $navz = $elem.find( '#nav-' + newVal );
             if (!$navz.hasClass('active')) {
-              $('ul.table-of-contents a').removeClass('active');
+              $( 'ul.table-of-contents li' ).removeClass( 'active' );
               $navz.addClass('active');
             }
           });
@@ -42,8 +42,9 @@ define([
           scope.$watch( 'headings', function( newVal ) {
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
+                var $tar = $( this.hash );
                 $( 'body, html' ).animate({
-                  scrollTop: $( this.hash ).offset().top - $( this.hash ).height() - 9
+                  scrollTop: $tar.offset().top - ( $tar.height() - 9 )
                 }, 200 );
                 return false;
               });

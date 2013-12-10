@@ -18,7 +18,7 @@
   path.angularResource = componentsPath + 'angular-resource/angular-resource';
   path.angularRoute    = componentsPath + 'angular-route/angular-route';
   path.jQuery          = componentsPath + 'jquery/jquery';
-  path.scrollSpy       = componentsPath + 'jquery/scrollspy';
+  path.scrollSpy       = 'vendor/scrollSpy';
 
   if ( env === 'production' ) {
     // ship preminified versions in prod environment

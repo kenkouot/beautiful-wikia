@@ -28,7 +28,10 @@ wk-table-of-contents {
 			overflow: hidden;
 			width: $toc-width;
 			white-space: nowrap;
-			&.active{
+		}
+
+		li {
+			&.active a {
 				font-weight: bold;
 			}
 		}
@@ -42,12 +45,11 @@ wk-table-of-contents {
 			border-left: 1px solid #ececec;
 		}
 
-		.indent-4 {
-			padding: 3px 20px 3px 25px;
-		}
-
 		.indent-4, .indent-5, .indent-6 {
-			@extend .hide;
+			// @extend .hide;
+			border-left: 1px solid #ececec;
+			padding: 3px 20px 3px 25px;
+			font-size: .75rem;
 		}
 	}
 }
