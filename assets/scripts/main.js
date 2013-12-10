@@ -27,6 +27,7 @@
   }
 
   require.config({
+    urlArgs: 'bust=' +  ( new Date() ).getTime(),
     paths: {
       angular         : path.angular,
       angularResource : path.angularResource,

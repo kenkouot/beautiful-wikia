@@ -1,9 +1,9 @@
-$toc-width: 160px;
+$toc-width: 180px;
 wk-table-of-contents {
 	@extend .fade;
   font-family: $header-font-family;
   font-size: .85rem;
-	margin-left: -180px;
+	margin-left: -200px;
 	position: absolute;
 	width: $toc-width;
 	opacity: 0;
@@ -31,15 +31,16 @@ wk-table-of-contents {
 		}
 
 		.indent-2 {
-			padding: 3px 10px 3px 0;
+			padding: 3px 20px 3px 0;
 		}
 
 		.indent-3 {
-			padding: 3px 10px 3px 10px;
+			padding: 3px 20px 3px 15px;
+			border-left: 1px solid #ececec;
 		}
 
 		.indent-4 {
-			padding: 3px 10px 3px 20px;
+			padding: 3px 20px 3px 25px;
 		}
 
 		.indent-4, .indent-5, .indent-6 {

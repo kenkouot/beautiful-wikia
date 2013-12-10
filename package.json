@@ -11,7 +11,8 @@
     "optimist": "0.3.4",
     "sudo": "~1.0.3",
     "grunt-contrib-sass": "~0.5.0",
-    "restler": "~2.0.1"
+    "restler": "~2.0.1",
+    "domino": "~1.0.13"
   },
   "scripts": {
     "start": "sails lift",
