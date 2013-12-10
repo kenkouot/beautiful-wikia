@@ -35,7 +35,7 @@ define([
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
                 $( 'body, html' ).animate({
-                  scrollTop: $( this.hash ).offset().top
+                  scrollTop: $( this.hash ).offset().top - $( this.hash ).height() - 9
                 }, 200 );
                 return false;
               });
