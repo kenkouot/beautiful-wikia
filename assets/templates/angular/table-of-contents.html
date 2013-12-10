@@ -4,6 +4,6 @@
 </span>
 <ul class="table-of-contents">
 	<li ng-repeat="heading in headings">
-		<a class="indent-{{ heading.level }}" href="#{{ heading.id }}">{{ heading.text }}</a>
+		<a class="indent-{{ heading.level }}" id="nav-{{ heading.id }}" href="#{{ heading.id }}">{{ heading.text }}</a>
 	</li>
 </ul>

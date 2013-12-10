@@ -28,6 +28,9 @@ wk-table-of-contents {
 			overflow: hidden;
 			width: $toc-width;
 			white-space: nowrap;
+			&.active{
+				font-weight: bold;
+			}
 		}
 
 		.indent-2 {

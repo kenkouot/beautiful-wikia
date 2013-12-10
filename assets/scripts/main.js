@@ -18,6 +18,7 @@
   path.angularResource = componentsPath + 'angular-resource/angular-resource';
   path.angularRoute    = componentsPath + 'angular-route/angular-route';
   path.jQuery          = componentsPath + 'jquery/jquery';
+  path.scrollSpy       = componentsPath + 'jquery/scrollspy';
 
   if ( env === 'production' ) {
     // ship preminified versions in prod environment
@@ -32,7 +33,8 @@
       angular         : path.angular,
       angularResource : path.angularResource,
       angularRoute    : path.angularRoute,
-      jQuery          : path.jQuery
+      jQuery          : path.jQuery,
+      scrollSpy       : path.scrollSpy
     },
     shim: {
       angular: {
@@ -47,6 +49,9 @@
       },
       jQuery: {
         exports: '$'
+      },
+      scrollSpy: {
+        deps: [ 'jQuery' ]
       }
     },
     priority: [

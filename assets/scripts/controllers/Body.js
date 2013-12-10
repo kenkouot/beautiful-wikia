@@ -16,6 +16,10 @@ define([
       $rootScope.$on( 'article:headings', function( data, headings ) {
         $scope.headings = headings;
       });
+      $rootScope.$on( 'article:scolldetected', function( data, headingId ) {
+        $scope.headingId = headingId;
+      });
+      
 
       $scope.closeModals = function() {
         $rootScope.$emit( 'modal:closeAll' );

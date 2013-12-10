@@ -31,6 +31,14 @@ define([
             }
           });
 
+          scope.$watch('headingId', function(newVal) {
+            var $navz = $elem.find('#nav-' + newVal);
+            if (!$navz.hasClass('active')) {
+              $('ul.table-of-contents a').removeClass('active');
+              $navz.addClass('active');
+            }
+          });
+
           scope.$watch( 'headings', function( newVal ) {
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
