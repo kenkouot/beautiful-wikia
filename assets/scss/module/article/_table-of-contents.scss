@@ -3,9 +3,18 @@ wk-table-of-contents {
 	@extend .fade;
   font-family: $header-font-family;
   font-size: .85rem;
-	margin-left: -$toc-width;
+	margin-left: -180px;
 	position: absolute;
 	width: $toc-width;
+	opacity: 0;
+	border-right: 1px solid #ececec;
+
+	&.sticky {
+		height: 100%;
+		overflow: auto;
+		position: fixed;
+		top: 60px;
+	}
 
 	.table-of-contents {
 		font-family: inherit;

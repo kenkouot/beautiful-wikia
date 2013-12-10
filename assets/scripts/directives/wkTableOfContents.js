@@ -6,8 +6,8 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkTableOfContents', [ '$anchorScroll', '$location', '$rootScope',
-    function( $anchorScroll, $location, $rootScope ) {
+  exports.directive( 'wkTableOfContents', [
+    function() {
       return {
         /**
          * @param {Object} scope refers to the BodyController, or whatever controller is in scope
@@ -18,7 +18,20 @@ define([
         restrict: 'E',
         templateUrl: 'table-of-contents.html',
         link: function( scope, $elem, attrs ) {
-          console.log( scope );
+          var $elemOffset = $elem.offset().top;
+          $( window ).on( 'scroll', function() {
+            var scrollHeight;
+
+            scrollHeight = $( this ).scrollTop();
+
+            if ( scrollHeight > $elemOffset ) {
+              $elem.addClass( 'sticky' );
+            } else {
+              $elem.removeClass( 'sticky' );
+            }
+          });
+
+
           scope.$watch( 'headings', function( newVal ) {
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
