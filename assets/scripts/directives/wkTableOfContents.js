@@ -44,7 +44,7 @@ define([
               $elem.find( 'a' ).on( 'click', function( evt ) {
                 var $tar = $( this.hash );
                 $( 'body, html' ).animate({
-                  scrollTop: $tar.offset().top - ( $tar.height() - 9 )
+                  scrollTop: $tar.offset().top - ( $tar.height() - ( $tar.height() * 0.18 ) )
                 }, 200 );
                 return false;
               });
