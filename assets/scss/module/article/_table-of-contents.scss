@@ -49,12 +49,9 @@ wk-table-of-contents {
 		}
 
 		.indent-4, .indent-5, .indent-6 {
-<<<<<<< HEAD
 			border-left: 1px solid #ececec;
 			padding: 3px 20px 3px 25px;
 			font-size: .75rem;
-=======
-			// @extend .hide;
 			display: none;
 			a {
 				border-left: 1px solid #ececec;
@@ -64,7 +61,6 @@ wk-table-of-contents {
 			&.shown, &.active {
 				display: block;
 			}
->>>>>>> Made ToC into bootstrap style
 		}
 
 	}
