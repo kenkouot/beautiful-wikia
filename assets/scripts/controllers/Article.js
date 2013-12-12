@@ -48,6 +48,7 @@ define([
           var title = newVal.content.title;
           $scope.articleContent = newVal.content.html;
           $rootScope.$emit( 'article:newTitle', title );
+          $rootScope.$emit( 'article:changed', newVal );
           if ( title && title !== 'Error' ) $rootScope.articleLoaded = true;
         }
       });
