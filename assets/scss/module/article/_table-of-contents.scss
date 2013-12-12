@@ -1,11 +1,7 @@
-$toc-width: 180px;
 wk-table-of-contents {
 	@extend .fade;
   font-family: $header-font-family;
   font-size: .85rem;
-	/* margin-left: -200px; */
-	/* position: absolute; */
-	/* width: $toc-width; */
 	opacity: 0;
 	border-right: 1px solid #ececec;
 
@@ -28,7 +24,6 @@ wk-table-of-contents {
 			text-overflow: ellipsis;
 			overflow: hidden;
 			width: 90%;
-			/* width: $toc-width; */
 			white-space: nowrap;
 		}
 
@@ -48,7 +43,6 @@ wk-table-of-contents {
 		}
 
 		.indent-4, .indent-5, .indent-6 {
-			// @extend .hide;
 			border-left: 1px solid #ececec;
 			padding: 3px 20px 3px 25px;
 			font-size: .75rem;
