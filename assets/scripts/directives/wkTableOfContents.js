@@ -52,11 +52,6 @@ define([
                 return false;
               });
               
-              $elem.find('li').each(function(){
-                var $indentLevel = $(this).data('indent');
-                console.log($indentLevel);  
-              });
-              
             }
           });
         }
