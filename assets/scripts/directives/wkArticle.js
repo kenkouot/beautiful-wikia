@@ -7,8 +7,8 @@ define([
   'scrollSpy'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkArticle', [ '$routeParams', '$location', '$rootScope', 'imageCdnPath',
-    function( $routeParams, $location, $rootScope, imageCdnPath ) {
+  exports.directive( 'wkArticle', [ '$routeParams', '$location', '$rootScope', 'imageCdnPath', '$compile',
+    function( $routeParams, $location, $rootScope, imageCdnPath, $compile ) {
       return {
         // restricts this directive to just tag elements eg. <wk-article>
         restrict: 'E',
@@ -62,7 +62,7 @@ define([
                 // opens an article that redirects to the Wikia file page
                 var imgSrc = $link.find( 'img' ).attr( 'src' );
                 $link.attr({
-                  'href': imageCdnPath.get( imgSrc ),
+                  'href': imgSrc,
                   'target': '_blank'
                 });
                 return true;
@@ -80,7 +80,8 @@ define([
 
             if ( newVal ) {
               // replace container contents when new article content arrives
-              $elem.html( newVal.content.html );
+              var el = $compile( newVal.content.html )( scope );
+              $elem.html( el );
               bindLinks();
 
               var $wkArticleTitle = $( '#wk-article-title' );

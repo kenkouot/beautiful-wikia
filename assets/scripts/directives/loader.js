@@ -7,6 +7,7 @@ define([
   'directives/wkArticleInput',
   'directives/wkBackToTop',
   'directives/wkHeroImage',
+  'directives/wkImagePlacer',
   'directives/wkModal',
   'directives/wkTableOfContents'
 ], function() {});
