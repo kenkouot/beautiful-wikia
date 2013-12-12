@@ -34,18 +34,34 @@ wk-table-of-contents {
 		}
 
 		.indent-2 {
-			padding: 3px 20px 3px 0;
+			margin: 3px 20px 3px 0;
 		}
 
 		.indent-3 {
-			padding: 3px 20px 3px 15px;
-			border-left: 1px solid #ececec;
+			display: none;
+			a {
+				padding: 3px 20px 3px 15px;
+				border-left: 1px solid #ececec;
+			}
+			&.shown, &.active {
+				display: block;
+			}
 		}
 
 		.indent-4, .indent-5, .indent-6 {
 			border-left: 1px solid #ececec;
 			padding: 3px 20px 3px 25px;
 			font-size: .75rem;
+			display: none;
+			a {
+				border-left: 1px solid #ececec;
+				padding: 3px 20px 3px 25px;
+				font-size: .75rem;
+			}
+			&.shown, &.active {
+				display: block;
+			}
 		}
+
 	}
 }
