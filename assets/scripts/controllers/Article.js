@@ -19,7 +19,14 @@ define([
         $rootScope.articleLoaded = false;
       });
 
+
       $scope.wikiBaseHref = 'http://' + $routeParams.wiki + '.wikia.com/';
+      if ($rootScope.wiki != $routeParams.wiki) {
+        $rootScope.$emit('article:wikiChanging', $routeParams.wiki);
+        $rootScope.wiki = $routeParams.wiki;   
+      }
+
+
       wikiApi = $scope.wikiBaseHref + 'api.php';
       $scope.article = null;
       $rootScope.headings = [];
@@ -30,6 +37,7 @@ define([
             return $location.path( '/article/' + $routeParams.wiki + '/' + data.content.html );
           }
           $scope.article = data;
+          $rootScope.$emit( 'article:changing' );
         } else {
           $scope.article = errorObj;
         }

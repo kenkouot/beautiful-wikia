@@ -1,0 +1,7 @@
+body.walkingdead-theme {
+	.hero {
+		@include background-image( url( '/images/hero/walking_dead_xl.jpg' ) );
+		background-size: cover;
+		background-position: 0 0;
+	}
+}
