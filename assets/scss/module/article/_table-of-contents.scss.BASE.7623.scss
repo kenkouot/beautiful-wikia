@@ -34,38 +34,18 @@ wk-table-of-contents {
 		}
 
 		.indent-2 {
-			margin: 3px 20px 3px 0;
+			padding: 3px 20px 3px 0;
 		}
 
 		.indent-3 {
-			display: none;
-			a {
-				padding: 3px 20px 3px 15px;
-				border-left: 1px solid #ececec;
-			}
-			&.shown, &.active {
-				display: block;
-			}
+			padding: 3px 20px 3px 15px;
+			border-left: 1px solid #ececec;
 		}
 
 		.indent-4, .indent-5, .indent-6 {
-<<<<<<< HEAD
 			border-left: 1px solid #ececec;
 			padding: 3px 20px 3px 25px;
 			font-size: .75rem;
-=======
-			// @extend .hide;
-			display: none;
-			a {
-				border-left: 1px solid #ececec;
-				padding: 3px 20px 3px 25px;
-				font-size: .75rem;
-			}
-			&.shown, &.active {
-				display: block;
-			}
->>>>>>> Made ToC into bootstrap style
 		}
-
 	}
 }

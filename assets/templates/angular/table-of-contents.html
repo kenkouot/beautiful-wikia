@@ -3,7 +3,7 @@
 	Table of Contents
 </span>
 <ul class="table-of-contents">
-	<li ng-repeat="heading in headings" id="nav-{{ heading.id }}" >
-		<a class="indent-{{ heading.level }}"href="#{{ heading.id }}">{{ heading.text }}</a>
+	<li ng-repeat="heading in headings" id="nav-{{ heading.id }}" data-indent="{{ heading.level }}"  class="indent-{{ heading.level }}">
+		<a  href="#{{ heading.id }}">{{ heading.text }}</a>
 	</li>
 </ul>

@@ -34,11 +34,13 @@ define([
           scope.$watch( 'headingId', function(newVal) {
             var $navz = $elem.find( '#nav-' + newVal );
             if (!$navz.hasClass('active')) {
-              $( 'ul.table-of-contents li' ).removeClass( 'active' );
+              $( 'ul.table-of-contents li' ).removeClass( 'active shown' );
               $navz.addClass('active');
+              $navz.nextUntil('.indent-2').addClass('shown');
+              $navz.prevUntil('.indent-2').addClass('shown');
             }
           });
-
+         
           scope.$watch( 'headings', function( newVal ) {
             if ( newVal ) {
               $elem.find( 'a' ).on( 'click', function( evt ) {
@@ -46,8 +48,15 @@ define([
                 $( 'body, html' ).animate({
                   scrollTop: $tar.offset().top - ( $tar.height() - ( $tar.height() * 0.18 ) )
                 }, 200 );
+                
                 return false;
               });
+              
+              $elem.find('li').each(function(){
+                var $indentLevel = $(this).data('indent');
+                console.log($indentLevel);  
+              });
+              
             }
           });
         }
