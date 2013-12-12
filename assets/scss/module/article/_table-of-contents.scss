@@ -3,9 +3,9 @@ wk-table-of-contents {
 	@extend .fade;
   font-family: $header-font-family;
   font-size: .85rem;
-	margin-left: -200px;
-	position: absolute;
-	width: $toc-width;
+	/* margin-left: -200px; */
+	/* position: absolute; */
+	/* width: $toc-width; */
 	opacity: 0;
 	border-right: 1px solid #ececec;
 
@@ -14,6 +14,7 @@ wk-table-of-contents {
 		overflow: auto;
 		position: fixed;
 		top: 60px;
+		width: 258px;
 	}
 
 	.table-of-contents {
@@ -26,7 +27,8 @@ wk-table-of-contents {
 			display: block;
 			text-overflow: ellipsis;
 			overflow: hidden;
-			width: $toc-width;
+			width: 90%;
+			/* width: $toc-width; */
 			white-space: nowrap;
 		}
 

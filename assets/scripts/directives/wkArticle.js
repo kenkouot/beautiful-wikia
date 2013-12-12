@@ -14,7 +14,7 @@ define([
         restrict: 'E',
         // abstract template to templateUrl if this gets any bigger
         // ng-class is for fading in and out on new articles
-        template: '<article class="column small-10"></article>',
+        template: '<article></article>',
         replace: true,
         link: function( scope, $elem, attrs ) {
           /**
