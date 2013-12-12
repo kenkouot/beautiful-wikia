@@ -27,8 +27,8 @@ module.exports = {
   index: function( req, res ) {
 
   	var api = req.query.url;
-    
-  	console.log(api);
+
+  	console.log('Making API call' + api);
 
   	restler.get(api).once('complete', function(result) {
   		if (result instanceof Error) {

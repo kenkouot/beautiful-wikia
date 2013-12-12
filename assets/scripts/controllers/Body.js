@@ -30,7 +30,6 @@ define([
         if (articleVal) {
           var api = articleVal.api.replace('api.php', '');
           relatedArticles.get(api, articleVal.content.page.id, 12, function(data) {
-            console.log(data);
             if ( typeof data.items === 'object') {
               $scope.relatedArticles = data.items[articleVal.content.page.id];
             } else {

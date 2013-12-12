@@ -77,7 +77,7 @@ define([
                 headings,
                 heading,
                 i;
-            console.log("here");
+
             if ( newVal ) {
               // replace container contents when new article content arrives
               var el = $compile( newVal.content.html )( scope );

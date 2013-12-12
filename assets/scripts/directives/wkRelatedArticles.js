@@ -21,10 +21,7 @@ define([
            */
            scope.$watch('relatedArticles', function( newVal, oldVal ) {
             if (newVal) {
-              console.log("related articles");
-              console.log(newVal);
               scope.articles = newVal;
-              console.log(scope.articles);
             }
           });
         }
