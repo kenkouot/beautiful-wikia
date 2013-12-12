@@ -1,0 +1,7 @@
+body.batman-theme {
+	.hero {
+		@include background-image( url( '/images/hero/batman_hero_xl.jpg' ) );
+		background-size: cover;
+		background-position: 0 0;
+	}
+}

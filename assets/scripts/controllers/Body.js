@@ -19,7 +19,7 @@ define([
       $rootScope.$on( 'article:scollDetected', function( data, headingId ) {
         $scope.headingId = headingId;
       });
-      
+
 
       $scope.closeModals = function() {
         $rootScope.$emit( 'modal:closeAll' );
@@ -39,6 +39,21 @@ define([
           this.closeModals();
         }
       };
+
+      $scope.setTheme = function( theme ) {
+        var $b = $('body');
+        var cur = $b.data('theme');
+        if (cur) {
+          $b.removeClass(cur + '-theme');
+        }
+
+        $b.addClass(theme + '-theme');
+        $b.data('theme', theme);
+      }
+
+      $rootScope.$on('article:wikiChanging', function( data, wiki) {
+        $scope.setTheme(wiki);
+      });
 
       $scope.setArticle = function( uri ) {
         var parts,
