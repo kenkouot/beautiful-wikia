@@ -1,0 +1,35 @@
+.article-image {
+	font-family: $header-font-family;
+	font-size: 0.85rem;
+	text-align: center;
+
+	figcaption {
+		margin-top: 10px;
+	}
+
+	&.feature {
+		background-color: black;
+		border: 10px solid black;
+		clear: both;
+		color: white;
+		margin: 20px 0;
+		max-height: 600px;
+		max-width: 100%;
+		overflow: hidden;
+
+		img, a {
+			display: block;
+			margin: 0 auto;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&.minor {
+		float: left;
+		margin: 6px 20px 0 0;
+	}
+}
