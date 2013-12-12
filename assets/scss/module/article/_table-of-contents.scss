@@ -25,11 +25,16 @@ wk-table-of-contents {
 			overflow: hidden;
 			width: 90%;
 			white-space: nowrap;
+			color: #555;
+			&:hover {
+				color:#333;
+			}
 		}
 
 		li {
 			&.active a {
-				font-weight: bold;
+				border-right: 3px solid #333;
+				
 			}
 		}
 
