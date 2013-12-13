@@ -16,12 +16,11 @@
 		display: inline-block;
 		position: relative;
 		a {
-			display: block;
 			overflow: hidden;
 			max-height: 600px;
 		}
 		img, a {
-			display: block;
+			display: inline;
 			margin: 0 auto;
 		}
 
@@ -50,12 +49,13 @@
 	&.minor, {
 		float: left;
 		margin: 6px 20px 10px 0;
+		max-width: 33%;
 	}
 	&.largeFeature {
 		margin: 6px 20px 10px 0;
 	}
 }
-@media #{$xlarge-up} { 
+@media #{$xlarge-up} {
 	.article-image.largeFeature {
 		clear: both;
 		margin: 20px 0;
@@ -64,12 +64,11 @@
 		display: inline-block;
 		position: relative;
 		a {
-			display: block;
 			overflow: hidden;
 			max-height: 600px;
 		}
 		img, a {
-			display: block;
+			display: inline;
 			margin: 0 auto;
 		}
 
