@@ -19,6 +19,7 @@ define([
         templateUrl: 'table-of-contents.html',
         link: function( scope, $elem, attrs ) {
           var $elemOffset = $elem.offset().top;
+          var topBarHeight = $('top-bar').height();
           $( window ).on( 'scroll', function() {
             var scrollHeight;
 
@@ -27,7 +28,7 @@ define([
             if ( scrollHeight > $elemOffset ) {
               var articleBottom = $('article').offset().top + $('article').height();
 
-              if (scrollHeight + $elem.height() >= articleBottom) {
+              if (scrollHeight + $elem.height() >= articleBottom ) {
                 $elem.css('top', articleBottom - $elem.height());
                 $elem.css('position', 'absolute');
                 $elem.removeClass('sticky');

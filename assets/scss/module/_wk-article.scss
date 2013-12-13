@@ -1,4 +1,8 @@
-wk-article {
+.content article {
 	@extend .fade;
 	opacity: 0;
+	border-left: 1px solid #ececec;
+	margin-left: -30px;
+	padding-left: 30px;
 }
+

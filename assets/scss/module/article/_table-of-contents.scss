@@ -1,9 +1,8 @@
 wk-table-of-contents {
 	@extend .fade;
-  font-family: $header-font-family;
-  font-size: .85rem;
+	font-family: $header-font-family;
+	font-size: .85rem;
 	opacity: 0;
-	border-right: 1px solid #ececec;
 
 	&.sticky {
 		overflow: auto;
