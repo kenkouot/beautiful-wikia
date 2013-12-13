@@ -5,20 +5,14 @@ define([
 ], function( exports ) {
   'use strict';
   exports.directive( 'wkInjectedContent', function() {
+    var adCount = 2;
     return {
+      replace: true,
       restrict: 'E',
-      //templateUrl: 'injected-content-ad.html',
+      templateUrl: 'injected-content-ad.html',
       link: function( scope, $elem, attrs ) {
-        $elem
-          .text( 'content' )
-          .css({
-            'background-color': 'black',
-            'color': 'white',
-            'display': 'block',
-            'line-height': '100px',
-            'text-align': 'center',
-            'vertical-align': 'middle'
-          });
+        var id = Math.floor( Math.random() * adCount + 1 );
+        $elem.find( 'img' ).attr( 'src', 'images/ads/ad' + id + '.png' );
       }
     };
   });
