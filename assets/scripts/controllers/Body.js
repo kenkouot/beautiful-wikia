@@ -2,17 +2,23 @@ define([
   'controllers/module'
 ], function( exports ) {
   'use strict';
-  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location',
-    function( $scope, $rootScope, $location ) {
+  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location', 'relatedArticles',
+    function( $scope, $rootScope, $location, relatedArticles ) {
+
       $scope.pageHeader = 'Beautiful Wikia';
       $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title.replace( /_|-/g, ' ' );
-        $scope.changing = false;
       });
       $rootScope.$on( 'article:changing', function( data, title ) {
         $scope.changing = true;
+        $scope.relatedArticles = {};
       });
+      $rootScope.$on( 'article:changed', function( data, vals) {
+        $scope.article = vals;
+        $scope.fetchRelatedArticles(vals);
+        $scope.changing = false;
+      })
       $rootScope.$on( 'article:headings', function( data, headings ) {
         $scope.headings = headings;
       });
@@ -20,6 +26,18 @@ define([
         $scope.headingId = headingId;
       });
 
+       $scope.fetchRelatedArticles = function(articleVal) {
+        if (articleVal) {
+          var api = articleVal.api.replace('api.php', '');
+          relatedArticles.get(api, articleVal.content.page.id, 12, function(data) {
+            if ( typeof data.items === 'object') {
+              $scope.relatedArticles = data.items[articleVal.content.page.id];
+            } else {
+              $scope.relatedArticles = {};
+            };
+          });
+        }
+      };
 
       $scope.closeModals = function() {
         $rootScope.$emit( 'modal:closeAll' );

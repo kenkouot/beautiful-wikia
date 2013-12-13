@@ -33,7 +33,9 @@ module.exports.routes = {
   //
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': 'Article',
-  '/image': 'Image'
+  '/image': 'Image',
+  '/proxy': 'ApiProxy'
+
 
   /*
   // But what if you want your home page to display

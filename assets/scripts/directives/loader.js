@@ -9,5 +9,6 @@ define([
   'directives/wkHeroImage',
   'directives/wkImagePlacer',
   'directives/wkModal',
-  'directives/wkTableOfContents'
+  'directives/wkTableOfContents',
+  'directives/wkRelatedArticles'
 ], function() {});

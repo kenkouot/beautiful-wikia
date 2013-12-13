@@ -4,5 +4,6 @@
  */
 define([
   'services/Article',
-  'services/ImageCdnPath'
+  'services/ImageCdnPath',
+  'services/relatedArticles'
 ], function() {});
