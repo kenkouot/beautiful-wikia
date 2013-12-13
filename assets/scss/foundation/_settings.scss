@@ -999,7 +999,7 @@ $font-smoothing: antialiased;
 $include-html-type-classes: $include-html-classes !default;
 
 // We use these to control header font styles
-$header-font-family: join("Open Sans", $body-font-family);
+$header-font-family: join("Open Sans Condensed", $body-font-family);
 // $header-font-weight: 300 !default;
 $header-font-weight: 600;
 // $header-font-style: normal !default;
@@ -1029,7 +1029,7 @@ $header-text-rendering: optimizeLegibility !default;
 // $small-font-color: lighten($header-font-color, 30%) !default;
 // 
 // // We use these to style paragraphs
-$paragraph-font-family: join("Merriweather", $body-font-family);
+$paragraph-font-family: join("Gotham Book", $body-font-family);
 // $paragraph-font-weight: normal !default;
 $paragraph-font-size: 1rem;
 $paragraph-line-height: 1.7;
