@@ -3,8 +3,8 @@
  * @description AMD module that serves as a registry for all services
  */
 define([
-  'services/Article',
-  'services/ImageCdnPath',
+  'services/article',
+  'services/imageCdnPath',
   'services/relatedArticles',
-  'services/ContentInjector'
+  'services/contentInjector'
 ], function() {});

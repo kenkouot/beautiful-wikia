@@ -2,10 +2,10 @@
 <ul class="row large-block-grid-4">
 	<li ng-repeat="article in articles">
 		<a href="{{ article.url }}">
-			<div ng-show="article.imgUrl">
-				<img src="{{ article.imgUrl }}">
+			<div ng-show="article.imgUrl.length">
+				<img ng-src="{{ article.imgUrl }}">
 			</div>
-			<div ng-show="!article.imgUrl">
+			<div ng-show="!article.imgUrl.length">
 				<img src="/images/related_blank.png">
 			</div>
 			{{ article.title }}

@@ -12,7 +12,7 @@ define([
       templateUrl: 'injected-content-ad.html',
       link: function( scope, $elem, attrs ) {
         var id = Math.floor( Math.random() * adCount + 1 );
-        $elem.find( 'img' ).attr( 'src', 'images/ads/ad' + id + '.png' );
+        $elem.find( 'img' ).attr( 'src', '/images/ads/ad' + id + '.png' );
       }
     };
   });
