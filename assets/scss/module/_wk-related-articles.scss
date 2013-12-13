@@ -10,9 +10,7 @@
 			div {
 				height: 235px;
 				overflow: hidden;
-				img {
-					width: 100%;
-				}
+				background-size:cover;
 				&:before {
 					position:absolute;
 					content: '';
@@ -24,10 +22,14 @@
 				}
 			}
 			.title {
-				position:absolute;
-				bottom:15px;
-				color: white;
+				position: absolute;
+				bottom: -5px;
+				color: #ccc;
 				z-index: 1;
+				font-family: 'open sans condensed';
+				font-size: 2em;
+				padding: 20px 45px;
+				line-height: 1.2em;
 			}
 		}
 	}
