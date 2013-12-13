@@ -1,6 +1,7 @@
 .hero-title {
 	@extend .fade;
 	color: $hero-text-color;
+	font-weight: bold;
 	margin-left: -20px;
 	opacity: 1;
 }
