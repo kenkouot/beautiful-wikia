@@ -6,9 +6,6 @@ wk-table-of-contents {
 	padding-top: 10px;
 
 	&.sticky {
-		overflow: auto;
-		position: fixed;
-		top: 60px;
 		width: 258px;
 	}
 
@@ -66,6 +63,5 @@ wk-table-of-contents {
 				display: block;
 			}
 		}
-
 	}
 }

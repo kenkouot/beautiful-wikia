@@ -1,0 +1,30 @@
+.contribution-menu {
+	// -_-
+	left: 50%;
+	margin-left: $body-width / 2 + px;
+	padding-top: 10px;
+	position: absolute;
+
+	li {
+		margin-left: 20px;
+		padding-bottom: 10px;
+
+		a {
+			color: #999;
+
+			&:active,
+			&:hover {
+				color: #666;
+			}
+		}
+
+		i {
+			font-size: 2rem;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+}
