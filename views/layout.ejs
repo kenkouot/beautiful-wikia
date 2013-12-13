@@ -40,11 +40,15 @@
 
   <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
     <nav class="top-bar z-max">
-      <ul class="title-area">
-        <li class="name">
+      <div class="row">
+        <div class="columns small-2">
           <h1><a href="#"><img class="logo" src="images/logo-wikia.png" alt=""></a></h1>
-        </li>
-      </ul>
+        </div>
+        <div class="columns small-10">
+          <input type="text" placeholder="Search this Wikia or thousands of others">
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
       <!-- <section class="top&#45;bar&#45;section"> -->
       <!--   <!&#45;&#45; Left Nav Section &#45;&#45;> -->
       <!--   <ul class="left"> -->
@@ -64,7 +68,25 @@
     </nav>
     <div class="row content-wrapper">
       <header class="row">
-        <h1 id="wk-article-title" class="hero-title" ng-class="{ invisible: !!changing }" ng-bind="pageHeader"></h1>
+        <div class="columns small-9 small-offset-3">
+          <h1 id="wk-article-title" class="hero-title" ng-class="{ invisible: !!changing }" ng-bind="pageHeader"></h1>
+          <strong class="contrib-label">Curated by</strong>
+          <div class="contrib-icons">
+            <ul class="inline-list">
+              <li><a href=""><img src="" alt=""></a></li>
+              <li><a href=""><img src="" alt=""></a></li>
+              <li><a href=""><img src="" alt=""></a></li>
+              <li><a href=""><img src="" alt=""></a></li>
+              <li><a href=""><img src="" alt=""></a></li>
+              <li><a href=""><img src="" alt=""></a></li>
+            </ul>
+            <strong class="contrib-detail">and 35 others</strong>
+          </div>
+          <div class="comments">
+            <i class="fa fa-comment"></i>
+            <span class="comment-count">236 comments</span>
+          </div>
+        </div>
       </header>
       <aside class="contribution-menu" wk-sticky-icky>
         <ul>
