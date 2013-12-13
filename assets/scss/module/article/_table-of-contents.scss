@@ -3,6 +3,7 @@ wk-table-of-contents {
 	font-family: $header-font-family;
 	font-size: .85rem;
 	opacity: 0;
+	padding-top: 10px;
 
 	&.sticky {
 		overflow: auto;
