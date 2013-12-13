@@ -25,11 +25,16 @@ wk-table-of-contents {
 			overflow: hidden;
 			width: 90%;
 			white-space: nowrap;
+			color: #555;
+			&:hover {
+				color:#333;
+			}
 		}
 
 		li {
 			&.active a {
-				font-weight: bold;
+				border-right: 3px solid #333;
+				
 			}
 		}
 
@@ -40,8 +45,10 @@ wk-table-of-contents {
 		.indent-3 {
 			display: none;
 			a {
-				padding: 3px 20px 3px 15px;
+				padding: 3px 20px 3px 10px;
 				border-left: 1px solid #ececec;
+				font-size: 0.8em;
+				line-height: 1.4em;
 			}
 			&.shown, &.active {
 				display: block;
@@ -49,14 +56,13 @@ wk-table-of-contents {
 		}
 
 		.indent-4, .indent-5, .indent-6 {
-			border-left: 1px solid #ececec;
-			padding: 3px 20px 3px 25px;
-			font-size: .75rem;
 			display: none;
 			a {
 				border-left: 1px solid #ececec;
-				padding: 3px 20px 3px 25px;
+				margin-left: 20px;
+				padding: 3px 20px 3px 10px;
 				font-size: .75rem;
+				line-height: 1.2em;
 			}
 			&.shown, &.active {
 				display: block;
