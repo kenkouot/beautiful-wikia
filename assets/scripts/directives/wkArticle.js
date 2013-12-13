@@ -7,8 +7,21 @@ define([
   'scrollSpy'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkArticle', [ '$routeParams', '$location', '$rootScope', 'imageCdnPath', '$compile',
-    function( $routeParams, $location, $rootScope, imageCdnPath, $compile ) {
+  exports.directive( 'wkArticle', [
+    '$routeParams',
+    '$location',
+    '$rootScope',
+    'imageCdnPath',
+    '$compile',
+    'contentInjector',
+    function(
+      $routeParams,
+      $location,
+      $rootScope,
+      imageCdnPath,
+      $compile,
+      contentInjector
+    ) {
       return {
         // restricts this directive to just tag elements eg. <wk-article>
         restrict: 'E',
@@ -69,6 +82,7 @@ define([
               }
             });
           }
+
           /*
            * Watches the scopes 'article' object for changes, loads new views on change
            */
@@ -104,6 +118,8 @@ define([
               $headings.scrollSpy();
 
               $rootScope.$emit( 'article:headings', headings );
+
+              contentInjector.inject( scope, $elem );
             }
           });
         }
