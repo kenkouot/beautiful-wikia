@@ -1,0 +1,50 @@
+.content-wrapper > header {
+	font-family: $paragraph-font-family;
+	position: relative;
+	height: 320px;
+	color: #FFF;
+
+	.columns {
+		height: 100%;
+	}
+
+	.contrib-icons {
+		bottom: 80px;
+		width: 100%;
+	}
+	.contrib-icons, .contrib-label, .contrib-detail, .comments {
+		position: absolute;
+	}
+
+	.inline-list {
+		display: inline-block;
+		li {
+			border-radius: 50%;
+			height: 38px;
+			width: 38px;
+			background: salmon;
+			content: '';
+			margin-left: 4px;
+		}
+	}
+
+	.contrib-label {
+		bottom: 145px;
+		margin-left: -18px;
+	}
+
+	.contrib-detail {
+		position: relative;
+		top: -20px;
+		left: 10px;
+	}
+
+	.comments {
+		bottom: 55px;
+		margin-left: -16px;
+
+	}
+	i {
+		font-size: 1.5rem;
+	}
+}
