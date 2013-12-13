@@ -25,10 +25,23 @@ define([
             scrollHeight = $( this ).scrollTop();
 
             if ( scrollHeight > $elemOffset ) {
-              $elem.addClass( 'sticky' );
+              var articleBottom = $('article').offset().top + $('article').height();
+
+              if (scrollHeight + $elem.height() >= articleBottom) {
+                $elem.css('top', articleBottom - $elem.height());
+                $elem.css('position', 'absolute');
+                $elem.removeClass('sticky');
+              } else {
+                $elem.css('top', '');
+                $elem.css('position', '');
+                $elem.addClass('sticky');
+              }
             } else {
+              $elem.css('top', '');
+              $elem.css('position', '');
               $elem.removeClass( 'sticky' );
             }
+
           });
 
           scope.$watch( 'headingId', function(newVal) {
