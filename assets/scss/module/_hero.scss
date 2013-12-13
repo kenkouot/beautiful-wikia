@@ -1,6 +1,6 @@
 .hero {
 	@extend .z-min;
-	@include background-image( url( '/images/bg.png' ) );
+	// @include background-image( url( '/images/bg.png' ) );
 	background-color: $hero-bg;
 	background-position: -100px -65px;
 	height: 460px;
