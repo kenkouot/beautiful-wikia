@@ -40,11 +40,14 @@
 
   <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
     <nav class="top-bar z-max">
-      <ul class="title-area">
-        <li class="name">
+      <div class="row">
+        <div class="columns small-2">
           <h1><a href="#"><img class="logo" src="images/logo-wikia.png" alt=""></a></h1>
-        </li>
-      </ul>
+        </div>
+        <div class="columns small-10">
+          <input type="text">
+        </div>
+      </div>
       <!-- <section class="top&#45;bar&#45;section"> -->
       <!--   <!&#45;&#45; Left Nav Section &#45;&#45;> -->
       <!--   <ul class="left"> -->

@@ -1,11 +1,22 @@
 .top-bar {
+	background-color: rgba( 0, 0, 0, .5 );
 	left: 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
 
 	.logo {
-		height: 18px;
+		height: 30px;
+		margin-top: -5px;
+		margin-left: -30px;
 		width: auto;
+	}
+
+	input {
+		background-color: #ececec;
+		border-radius: 20px;
+		border: 6px solid #ccc;
+		margin-top: 17px;
+		padding: 10px 20px;
 	}
 }
