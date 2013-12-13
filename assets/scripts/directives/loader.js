@@ -10,5 +10,6 @@ define([
   'directives/wkImagePlacer',
   'directives/wkModal',
   'directives/wkTableOfContents',
-  'directives/wkRelatedArticles'
+  'directives/wkRelatedArticles',
+  'directives/wkInjectedContent'
 ], function() {});

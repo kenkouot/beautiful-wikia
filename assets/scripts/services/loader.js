@@ -5,5 +5,6 @@
 define([
   'services/Article',
   'services/ImageCdnPath',
-  'services/relatedArticles'
+  'services/relatedArticles',
+  'services/ContentInjector'
 ], function() {});
