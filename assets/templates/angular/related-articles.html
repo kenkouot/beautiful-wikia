@@ -1,6 +1,6 @@
 <div>
-<ul class="row large-block-grid-4">
-	<li ng-repeat="article in articles">
+<ul class="row=">
+	<li ng-repeat="article in articles" class="relatedArticles">
 		<a href="{{ article.url }}">
 			<div ng-show="article.imgUrl.length">
 				<img ng-src="{{ article.imgUrl }}">
@@ -8,7 +8,9 @@
 			<div ng-show="!article.imgUrl.length">
 				<img src="/images/related_blank.png">
 			</div>
-			{{ article.title }}
+			<span class="title">
+				{{ article.title }}
+			</span>
 		</a>
 	</li>
 </ul>
