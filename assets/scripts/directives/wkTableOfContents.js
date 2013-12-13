@@ -6,8 +6,7 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkTableOfContents', [ '$rootScope',
-    function( $rootScope ) {
+  exports.directive( 'wkTableOfContents', function() {
       return {
         /**
          * @param {Object} scope refers to the BodyController, or whatever controller is in scope
@@ -17,34 +16,7 @@ define([
          */
         restrict: 'E',
         templateUrl: 'table-of-contents.html',
-        link: function( scope, $elem, attrs ) {
-          var $elemOffset = $elem.offset().top;
-          var topBarHeight = $('top-bar').height();
-          $( window ).on( 'scroll', function() {
-            var scrollHeight;
-
-            scrollHeight = $( this ).scrollTop();
-
-            if ( scrollHeight > $elemOffset ) {
-              var articleBottom = $('article').offset().top + $('article').height();
-
-              if (scrollHeight + $elem.height() >= articleBottom ) {
-                $elem.css('top', articleBottom - $elem.height());
-                $elem.css('position', 'absolute');
-                $elem.removeClass('sticky');
-              } else {
-                $elem.css('top', '');
-                $elem.css('position', '');
-                $elem.addClass('sticky');
-              }
-            } else {
-              $elem.css('top', '');
-              $elem.css('position', '');
-              $elem.removeClass( 'sticky' );
-            }
-
-          });
-
+        link: function( scope, $elem ) {
           scope.$watch( 'headingId', function(newVal) {
             var $navz = $elem.find( '#nav-' + newVal );
             if (!$navz.hasClass('active')) {
@@ -54,21 +26,20 @@ define([
               $navz.prevUntil('.indent-2').addClass('shown');
             }
           });
-         
+
           scope.$watch( 'headings', function( newVal ) {
             if ( newVal ) {
-              $elem.find( 'a' ).on( 'click', function( evt ) {
+              $elem.find( 'a' ).on( 'click', function() {
                 var $tar = $( this.hash );
                 $( 'body, html' ).animate({
                   scrollTop: $tar.offset().top - ( $tar.height() - ( $tar.height() * 0.18 ) )
                 }, 200 );
-                
+
                 return false;
               });
-              
             }
           });
         }
       };
-  }]);
+  });
 });

@@ -11,5 +11,6 @@ define([
   'directives/wkModal',
   'directives/wkTableOfContents',
   'directives/wkRelatedArticles',
-  'directives/wkInjectedContent'
+  'directives/wkInjectedContent',
+  'directives/wkStickyIcky'
 ], function() {});
