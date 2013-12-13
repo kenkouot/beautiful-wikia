@@ -33,7 +33,9 @@ define([
 
             if ( !$figure.length ) return;
             $figure.addClass( 'article-image' );
-            if ( img.width > ( figureWidth / 2 ) ) {
+            if ( img.width > ( figureWidth / 1.3 ) ) {
+              $figure.addClass( 'largeFeature' );
+            } else if ( img.width > ( figureWidth / 2 ) ) {
               $figure.addClass( 'feature' );
             } else {
               $figure.addClass( 'minor' );
