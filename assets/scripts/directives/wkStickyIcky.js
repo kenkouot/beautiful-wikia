@@ -17,15 +17,18 @@ define([
               $elem.css('top', articleBottom - $elem.height());
               $elem.css('position', 'absolute');
               $elem.removeClass('sticky');
+              $scope.menuDocked = false;
             } else {
               $elem.css('top', topBarHeight);
               $elem.css('position', '');
               $elem.addClass('sticky');
+              $scope.menuDocked = true;
             }
           } else {
             $elem.css('top', '');
             $elem.css('position', '');
             $elem.removeClass( 'sticky' );
+            $scope.menuDocked = false;
           }
         });
       }

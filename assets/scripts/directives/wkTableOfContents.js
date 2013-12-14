@@ -39,6 +39,10 @@ define([
               });
             }
           });
+
+          scope.$watch( 'menuDocked', function( newVal ) {
+            $('.top-bar').toggleClass( 'opaque', !!newVal );
+          });
         }
       };
   });
