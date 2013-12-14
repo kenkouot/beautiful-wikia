@@ -1,7 +1,7 @@
 .content article {
 	@extend .fade;
 	opacity: 0;
-	border-left: 1px solid #ececec;
+	border-left: $article-border-left;
 	margin-top: 20px;
 	margin-left: -30px;
 	padding-left: 30px;
