@@ -1,5 +1,5 @@
 body.shadowofmordor-theme {
-
+	$article-border-left: 1px solid #000;
 
 	background-color: #181818;
 	color: #C0C0C0 ;
@@ -18,7 +18,7 @@ body.shadowofmordor-theme {
 	}
 
 	table{
-		border-color:none;
+		border-color:none!important;
 	}
 
 	.hero {
