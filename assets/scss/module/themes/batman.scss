@@ -1,5 +1,12 @@
 body.batman-theme {
 
+	.top-bar.opaque {
+		&:before {
+			@include background-image( url( '/images/hero/batman_hero_xl.jpg' ) );
+			background-size: cover;
+			background-position: 0 -388px;
+		}
+	}
 
 	background-color: #181818;
 	color: #B0B0B0;

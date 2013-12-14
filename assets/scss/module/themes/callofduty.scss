@@ -1,5 +1,13 @@
 body.callofduty-theme {
 
+	.top-bar.opaque {
+		&:before {
+			@include background-image( url( '/images/hero/callofduty.jpg' ) );
+			background-size: cover;
+			background-position: 0 -388px;
+		}
+	}
+
 
 	background-color: #181818;
 	color: #C0C0C0 ;
