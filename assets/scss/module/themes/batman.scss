@@ -27,5 +27,9 @@ body.batman-theme {
 		background-position: 0 0;
 	}
 
-	
+	.content article,
+	.infobox,
+	wk-table-of-contents .table-of-contents a {
+		border-color: #333;
+	}
 }
