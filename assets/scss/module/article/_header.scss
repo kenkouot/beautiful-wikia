@@ -1,7 +1,7 @@
 .content-wrapper > header {
 	font-family: $paragraph-font-family;
 	position: relative;
-	height: 320px;
+	height: 300px;
 	color: #FFF;
 
 	.columns {
@@ -22,9 +22,12 @@
 			border-radius: 50%;
 			height: 38px;
 			width: 38px;
-			background: salmon;
 			content: '';
 			margin-left: 4px;
+			overflow: hidden;
+
+			img {
+			}
 		}
 	}
 

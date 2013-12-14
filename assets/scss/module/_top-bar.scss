@@ -5,6 +5,10 @@
 	top: 0;
 	width: 100%;
 
+	&.opaque {
+		background-color: rgba( 0, 0, 0, 1 );
+	}
+
 	.logo {
 		height: 30px;
 		margin-top: -5px;
