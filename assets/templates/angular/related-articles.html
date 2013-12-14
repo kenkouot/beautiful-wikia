@@ -1,13 +1,15 @@
 <div>
-<ul class="row=">
-	<li ng-repeat="article in articles" class="relatedArticles">
-		<a href="{{ article.url.replace( '/wiki', '').replace( '/', '#article/' + $root.wiki + '/' ) }}">
-			<div ng-show="article.imgUrl.length"  style="background-image:url({{ article.imgUrl }})"></div>
-			<div ng-show="!article.imgUrl.length" style="background-image:url(/images/related_blank.png)"></div>
-			<span class="title">
-				{{ article.title }}
-			</span>
-		</a>
-	</li>
-</ul>
+	<div class="row">
+		<ul>
+			<li ng-repeat="article in articles" class="relatedArticles">
+				<a href="{{ article.url.replace( '/wiki', '').replace( '/', '#article/' + $root.wiki + '/' ) }}">
+					<div ng-show="article.imgUrl.length"  style="background-image:url({{ article.imgUrl }})"></div>
+					<div ng-show="!article.imgUrl.length" style="background-image:url(/images/related_blank.png)"></div>
+					<span class="title">
+						{{ article.title }}
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
