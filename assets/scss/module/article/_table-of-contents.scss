@@ -1,6 +1,6 @@
 wk-table-of-contents {
 	@extend .fade;
-	font-family: $header-font-family;
+	font-family: join("Open Sans", $body-font-family);
 	font-size: .85rem;
 	opacity: 0;
 	padding-top: 10px;
