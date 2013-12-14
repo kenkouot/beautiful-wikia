@@ -1,0 +1,23 @@
+wk-save-dialogue {
+	position:fixed;
+	top:0;
+	right:0;
+	left:0;
+	height:72px;
+	background: rgba(0,0,0,.8);
+	z-index: 5;
+	h4#edit-title {
+		color: rgb(176, 176, 176);
+		float:left;
+		line-height: 72px;
+	}
+	ul {
+		list-style-type: none;
+		margin:10px 0 0;
+		float:right;
+		li {
+			float: left;
+			margin-left:15px;
+		}
+	}
+}

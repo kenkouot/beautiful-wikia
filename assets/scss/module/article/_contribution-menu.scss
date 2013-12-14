@@ -15,7 +15,11 @@
 		margin-left: 20px;
 		padding-bottom: 10px;
 		text-align: center;
-
+		display: none;
+		
+		&.active {
+			display: block;
+		}
 		a {
 			color: #999;
 
@@ -27,6 +31,10 @@
 
 		i {
 			font-size: 2rem;
+			&.smaller {
+				font-size: 1rem;
+				
+			}
 		}
 	}
 
