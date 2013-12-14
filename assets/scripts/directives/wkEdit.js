@@ -21,7 +21,6 @@ define([
             $('wk-save-dialogue').fadeToggle();
             $('nav').fadeToggle();
             $('.wk-injected-content').fadeToggle();
-
           } else {
             $('article').attr('contenteditable', 'true');
             $('.contribution-menu li').each(function(){
@@ -32,7 +31,6 @@ define([
             $('wk-save-dialogue').fadeToggle();
             $('nav').fadeToggle();
             $('.wk-injected-content').fadeToggle();
-
           }
           
           return false;
