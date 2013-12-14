@@ -65,42 +65,4 @@
 		}
 	}
 }
-@media #{$xlarge-up} {
-	.article-image.largeFeature {
-		clear: both;
-		margin: 20px 0;
-		max-height: 600px;
-		max-width: 100%;
-		display: inline-block;
-		position: relative;
-		a {
-			overflow: hidden;
-			max-height: 600px;
-		}
-		img, a {
-			display: inline;
-			margin: 0 auto;
-		}
 
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-		figcaption {
-			position:absolute;
-			top:5px;
-			left:100%;
-			margin-left: 20px;
-			width: 240px;
-			&:before {
-				width: 50px;
-				height: 2px;
-				background: #666;
-				position: absolute;
-				top: -15px;
-				left: 0;
-				content: "";
-			}
-		}
-	}
-}
