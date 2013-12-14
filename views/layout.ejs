@@ -73,10 +73,17 @@
       </header>
       <aside class="contribution-menu" wk-sticky-icky>
         <ul>
-          <li><a   wk-edit><i class="fa fa-pencil-square-o"></i></a></li>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li class="active"><a   wk-edit><i class="fa fa-pencil-square-o"></i></a></li>
+          <li class="active"><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li class="active"><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li class="active"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-undo smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-bold smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-italic smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-chain smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-list-ul smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-cloud-upload smaller"></i></a></li>
+          <li class="edit"><a href="#" class=""><i class="fa fa-video-camera smaller"></i></a></li>
         </ul>
       </aside>
       <div class="content row">
@@ -89,6 +96,7 @@
     <div class="hero">
       <wk-hero-image></wk-hero-image>
     </div>
+    <wk-save-dialogue class="z-max hide"></wk-save-dialogue>
     <wk-modal show-when="modals.articleInput">
       <wk-article-input />
     </wk-modal>
