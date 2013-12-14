@@ -1,6 +1,15 @@
 body.shadowofmordor-theme {
 	$article-border-left: 1px solid #000;
 
+	.top-bar.opaque {
+		&:before {
+			@include background-image( url( '/images/hero/shadowofmordor.jpg' ) );
+			background-size: cover;
+			background-position: 0 -388px;
+		}
+	}
+
+
 	background-color: #181818;
 	color: #C0C0C0 ;
 
