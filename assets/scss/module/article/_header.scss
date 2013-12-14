@@ -22,9 +22,12 @@
 			border-radius: 50%;
 			height: 38px;
 			width: 38px;
-			background: salmon;
 			content: '';
 			margin-left: 4px;
+			overflow: hidden;
+
+			img {
+			}
 		}
 	}
 

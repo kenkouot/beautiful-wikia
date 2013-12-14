@@ -1,7 +1,7 @@
 <div>
 <ul class="row=">
 	<li ng-repeat="article in articles" class="relatedArticles">
-		<a href="{{ article.url }}">
+		<a href="{{ article.url.replace( '/wiki', '#article/' + $root.wiki ) }}">
 			<div ng-show="article.imgUrl.length">
 				<img ng-src="{{ article.imgUrl }}">
 			</div>
