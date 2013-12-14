@@ -35,7 +35,8 @@ body.batman-theme {
 
 	wk-table-of-contents .table-of-contents li {
 		&.active a {
-			color: #B0B0B0;
+			border-color: #777;
+			color: #777;
 		}
 	}
 }
