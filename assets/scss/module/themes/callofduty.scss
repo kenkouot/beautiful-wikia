@@ -1,15 +1,15 @@
-body.batman-theme {
+body.callofduty-theme {
 
 
 	background-color: #181818;
-	color: #B0B0B0  ;
+	color: #C0C0C0 ;
 
 	h2,h3,h4{
-		color:#fbad31;
+		color:#1C74A3;
 	}
 
 	a{
-	  color:#fbad31;
+		color:#1C74A3;
 	}
 
 	tr,td,th{
@@ -22,7 +22,7 @@ body.batman-theme {
 	}
 
 	.hero {
-		@include background-image( url( '/images/hero/batman_hero_xl.jpg' ) );
+		@include background-image( url( '/images/hero/callofduty.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
 	}

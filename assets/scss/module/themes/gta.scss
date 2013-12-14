@@ -1,5 +1,4 @@
-body.walkingdead-theme {
-
+body.gta-theme {
 
 	background-color: #E8E8E8;
 	color: #383838  ;
@@ -25,7 +24,7 @@ body.walkingdead-theme {
 	}
 
 	.hero {
-		@include background-image( url( '/images/hero/The-Walking-Dead.jpg' ) );
+		@include background-image( url( '/images/hero/gta.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
 	}
