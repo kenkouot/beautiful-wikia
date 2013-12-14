@@ -17,6 +17,7 @@ define([
         $elem.on( 'submit', function( evt ) {
           var val = $elem.find( 'input' ).val();
           scope.$apply(function( scope ) {
+            val = val.trim();
             var article = scope.setArticle( val );
           });
         });
