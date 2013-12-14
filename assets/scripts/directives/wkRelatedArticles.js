@@ -6,8 +6,8 @@ define([
   'directives/module'
 ], function( exports ) {
   'use strict';
-  exports.directive( 'wkRelatedArticles', [ '$routeParams', '$location', '$rootScope', 'relatedArticles',
-    function( $routeParams, $location, $rootScope, relatedArticles ) {
+  exports.directive( 'wkRelatedArticles', [ '$routeParams', '$location', '$rootScope', 'relatedArticles', 'imageCdnPath',
+    function( $routeParams, $location, $rootScope, relatedArticles, imageCdnPath ) {
       return {
         // restricts this directive to just tag elements eg. <wk-related-articles>
         restrict: 'E',
@@ -20,7 +20,10 @@ define([
            * Watches the scopes 'article' object for changes, loads new views on change
            */
            scope.$watch('relatedArticles', function( newVal, oldVal ) {
-            if (newVal) {
+            if (newVal && newVal.length) {
+              newVal.forEach(function( item ) {
+                item.imgUrl = imageCdnPath.get( decodeURIComponent( item.imgUrl ) );
+              });
               scope.articles = newVal;
             }
           });

@@ -1,10 +1,10 @@
 <div>
 	<div class="row">
 		<ul>
-			<li ng-repeat="article in articles" class="relatedArticles">
+			<li ng-repeat="article in articles" class="related-article">
 				<a href="{{ article.url.replace( '/wiki', '').replace( '/', '#article/' + $root.wiki + '/' ) }}">
 					<div ng-show="article.imgUrl.length"  style="background-image:url({{ article.imgUrl }})"></div>
-					<div ng-show="!article.imgUrl.length" style="background-image:url(/images/related_blank.png)"></div>
+					<div ng-show="!article.imgUrl.length" style="background-image:url(/images/related_blank.png)" class="placeholder"></div>
 					<span class="title">
 						{{ article.title }}
 					</span>

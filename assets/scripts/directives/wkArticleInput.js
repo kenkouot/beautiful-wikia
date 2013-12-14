@@ -14,7 +14,6 @@ define([
       replace: true,
       transclude: true,
       link: function( scope, $elem, attrs ) {
-        console.log( $elem );
         $elem.on( 'submit', function( evt ) {
           var val = $elem.find( 'input' ).val();
           scope.$apply(function( scope ) {

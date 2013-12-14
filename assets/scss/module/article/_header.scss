@@ -1,8 +1,14 @@
+.page-splash .content-wrapper > header {
+	display: none;
+}
+
 .content-wrapper > header {
+	@extend .fade;
 	font-family: $paragraph-font-family;
 	position: relative;
 	height: 300px;
 	color: #FFF;
+	opacity: 0;
 
 	.columns {
 		height: 100%;

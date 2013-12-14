@@ -14,6 +14,8 @@ define([
         }
       };
 
+      $rootScope.page = 'article';
+
       $scope.$on( '$locationChangeStart', function() {
         $rootScope.$emit( 'article:changing' );
         $rootScope.articleLoaded = false;
