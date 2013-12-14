@@ -5,7 +5,7 @@ define([
 ], function( exports ) {
   'use strict';
   exports.directive( 'wkInjectedContent', function() {
-    var adCount = 2;
+    var adCount = 9;
     return {
       replace: true,
       restrict: 'E',
