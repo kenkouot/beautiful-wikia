@@ -1,14 +1,5 @@
 body.walkingdead-theme {
 
-	.top-bar.opaque {
-		&:before {
-			@include background-image( url( '/images/hero/The-Walking-Dead.jpg' ) );
-			background-size: cover;
-			background-position: 0 -388px;
-		}
-	}
-
-
 	background-color: #E8E8E8;
 	color: #383838  ;
 
