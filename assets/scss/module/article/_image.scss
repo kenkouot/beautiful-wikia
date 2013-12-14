@@ -52,12 +52,12 @@
 		margin: 6px 20px 10px 0;
 		max-width: 33%;
 	}
-	&.largeFeature {
+	&.large-feature {
 		margin: 6px 20px 10px 0;
 		a {
 			overflow: hidden;
 			max-height: 600px;
-			display: inline-block;
+			display: block;
 		}
 		img {
 			max-width: 100%;

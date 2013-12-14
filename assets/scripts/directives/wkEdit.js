@@ -3,50 +3,53 @@ define([
 ], function( exports ) {
   'use strict';
   exports.directive( 'wkEdit', function() {
+
+    function onAnchorClick() {
+      $( '.contribution-menu li' ).removeClass( 'active' );
+      $( 'article' ).removeAttr( 'contenteditable' );
+      $( '.contribution-menu li' ).each(function(){
+        if( !$( this ).hasClass( 'edit' ) || $( this ).is( ':first-child' ) ){
+          $( this ).addClass( 'active' );
+        }
+      });
+      $( 'wk-save-dialogue' ).fadeOut();
+      $( 'nav' ).fadeIn();
+      $( '.wk-injected-content' ).fadeIn();
+      $( 'article a, .related-articles-grid a' ).off( 'click', onAnchorClick );
+    }
+
     return {
       restrict: 'A',
       link: function( $scope, $elem ) {
-        
-       
         $elem.click(function(){
-          $('.contribution-menu li').removeClass('active');
+          // hide contribution items
+          $( '.contribution-menu li' ).removeClass( 'active' );
 
-          if ( $('article').attr('contenteditable')){
-            $('article').removeAttr('contenteditable');
-            $('.contribution-menu li').each(function(){
-              if(!$(this).hasClass('edit') || $(this).is(':first-child')){
-                $(this).addClass('active');
+          if ( $( 'article' ).attr( 'contenteditable' ) ) {
+            $( 'article' ).removeAttr( 'contenteditable' );
+
+            $( '.contribution-menu li' ).each(function(){
+              if( !$( this ).hasClass( 'edit' ) || $( this ).is( ':first-child' ) ) {
+                $( this ).addClass( 'active' );
               }
             });
-            $('wk-save-dialogue').fadeToggle();
-            $('nav').fadeToggle();
-            $('.wk-injected-content').fadeToggle();
+            // TODO: This should broadcast a scope event or something and the fade should be handled
+            // in wkSaveDialogue
+            $( 'wk-save-dialogue' ).fadeOut();
+            $( 'nav' ).fadeIn();
+            $( '.wk-injected-content' ).fadeIn();
+            $( 'article a, .related-articles-grid a' ).off( 'click', onAnchorClick );
           } else {
-            $('article').attr('contenteditable', 'true');
-            $('.contribution-menu li').each(function(){
-              if($(this).hasClass('edit')){
-                $(this).addClass('active');
-              }
-            });
-            $('wk-save-dialogue').fadeToggle();
-            $('nav').fadeToggle();
-            $('.wk-injected-content').fadeToggle();
+            $( 'article' ).attr( 'contenteditable', 'true' );
+            $( '.contribution-menu .edit' ).addClass( 'active' );
+
+            $( 'wk-save-dialogue' ).fadeIn();
+            $( 'nav' ).fadeOut();
+            $( '.wk-injected-content' ).fadeOut();
+            $( 'article a, .related-articles-grid a' ).on( 'click', onAnchorClick );
           }
-          $('article a, .related-articles-grid a').click(function(e){
-            $('.contribution-menu li').removeClass('active');
-            $('article').removeAttr('contenteditable');
-            $('.contribution-menu li').each(function(){
-              if(!$(this).hasClass('edit') || $(this).is(':first-child')){
-                $(this).addClass('active');
-              }
-            });
-            $('wk-save-dialogue').fadeToggle();
-            $('nav').fadeToggle();
-            $('.wk-injected-content').fadeToggle();
-            
-          });
           return false;
-        })
+        });
       }
     };
   });
