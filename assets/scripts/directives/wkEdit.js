@@ -7,7 +7,7 @@ define([
       restrict: 'A',
       link: function( $scope, $elem ) {
         
-
+       
         $elem.click(function(){
           $('.contribution-menu li').removeClass('active');
 
@@ -32,7 +32,19 @@ define([
             $('nav').fadeToggle();
             $('.wk-injected-content').fadeToggle();
           }
-          
+          $('article a, .related-articles-grid a').click(function(e){
+            $('.contribution-menu li').removeClass('active');
+            $('article').removeAttr('contenteditable');
+            $('.contribution-menu li').each(function(){
+              if(!$(this).hasClass('edit') || $(this).is(':first-child')){
+                $(this).addClass('active');
+              }
+            });
+            $('wk-save-dialogue').fadeToggle();
+            $('nav').fadeToggle();
+            $('.wk-injected-content').fadeToggle();
+            
+          });
           return false;
         })
       }
