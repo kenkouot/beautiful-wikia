@@ -83,7 +83,7 @@
         <%- body %>
       </div>
     </div>
-    <wk-related-articles ng-show="articles.length" class="related-articles-grid">
+    <wk-related-articles ng-show="articles.length" class="related-articles-grid" ng-class="{ 'opaque': !changing }">
     </wk-related-articles>
     <%- partial('partials/footer') %>
     <div class="hero">
