@@ -29,5 +29,16 @@ body.gta-theme {
 		background-position: 0 0;
 	}
 
-	
+	.content article,
+	.infobox,
+	wk-table-of-contents .table-of-contents a {
+		border-color: #bbb;
+	}
+
+	wk-table-of-contents .table-of-contents li {
+		&.active a {
+			border-color: #999;
+			color: #333;
+		}
+	}
 }

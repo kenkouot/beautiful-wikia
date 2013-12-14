@@ -38,7 +38,7 @@
 
   </head>
 
-  <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )">
+  <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )" class="page-{{ $root.page }}">
     <nav class="top-bar z-max">
       <div class="row">
         <div class="columns small-2">
@@ -51,9 +51,9 @@
       </div>
     </nav>
     <div class="row content-wrapper">
-      <header class="row">
+      <header class="row" ng-class="{ opaque: !changing }">
         <div class="columns small-9 small-offset-3">
-          <h1 id="wk-article-title" class="hero-title" ng-class="{ invisible: !!changing }" ng-bind="pageHeader"></h1>
+          <h1 id="wk-article-title" class="hero-title" ng-bind="pageHeader"></h1>
           <strong class="contrib-label">Curated by</strong>
           <div class="contrib-icons">
             <ul class="inline-list">
@@ -71,7 +71,7 @@
           </div>
         </div>
       </header>
-      <aside class="contribution-menu" wk-sticky-icky>
+      <aside class="contribution-menu" wk-sticky-icky ng-class="{ 'opaque': !changing }">
         <ul>
           <li class="active"><a   wk-edit><i class="fa fa-pencil-square-o"></i></a></li>
           <li class="active"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -90,7 +90,7 @@
         <%- body %>
       </div>
     </div>
-    <wk-related-articles ng-show="articles.length" class="related-articles-grid">
+    <wk-related-articles ng-show="articles.length" class="related-articles-grid" ng-class="{ 'opaque': !changing }">
     </wk-related-articles>
     <%- partial('partials/footer') %>
     <div class="hero">

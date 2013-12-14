@@ -1,9 +1,15 @@
 .contribution-menu {
 	// -_-
+	@extend .fade;
 	left: 50%;
 	margin-left: $body-width / 2 + px;
 	padding-top: 20px;
 	position: absolute;
+	opacity: 0;
+
+	&.sticky {
+		top: 70px;
+	}
 
 	li {
 		margin-left: 20px;
@@ -36,4 +42,8 @@
 		list-style: none;
 		margin: 0;
 	}
+}
+
+.page-splash .contribution-menu {
+	opacity: 0;
 }

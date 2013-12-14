@@ -26,7 +26,7 @@ define([
       var res = $resource('/ApiProxy');
       return res.get({
         url: api + 'api/v1/RelatedPages/List/?ids=' + articleIds +
-         "&limit=" + limit
+         '&limit=' + limit
       }, then );
     };
   }]);

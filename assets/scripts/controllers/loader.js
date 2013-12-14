@@ -4,5 +4,6 @@
  */
 define([
   'controllers/Article',
-  'controllers/Body'
+  'controllers/Body',
+  'controllers/Splash'
 ], function() {});

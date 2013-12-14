@@ -2,7 +2,7 @@ body.batman-theme {
 
 
 	background-color: #181818;
-	color: #B0B0B0  ;
+	color: #B0B0B0;
 
 	h2,h3,h4{
 		color:#fbad31;
@@ -31,5 +31,12 @@ body.batman-theme {
 	.infobox,
 	wk-table-of-contents .table-of-contents a {
 		border-color: #333;
+	}
+
+	wk-table-of-contents .table-of-contents li {
+		&.active a {
+			border-color: #777;
+			color: #777;
+		}
 	}
 }

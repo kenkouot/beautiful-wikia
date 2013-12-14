@@ -1,8 +1,14 @@
+.page-splash .content-wrapper > header {
+	display: none;
+}
+
 .content-wrapper > header {
+	@extend .fade;
 	font-family: $paragraph-font-family;
 	position: relative;
 	height: 300px;
 	color: #FFF;
+	opacity: 0;
 
 	.columns {
 		height: 100%;
@@ -18,6 +24,7 @@
 
 	.inline-list {
 		display: inline-block;
+		overflow: visible;
 		li {
 			border-radius: 50%;
 			height: 38px;
@@ -25,10 +32,14 @@
 			content: '';
 			margin-left: 4px;
 			overflow: hidden;
-
-			img {
-			}
+			box-shadow: black 1px 1px 6px;
 		}
+	}
+
+	.contrib-label,
+	.contrib-detail,
+	.comment-count {
+		text-shadow: black 1px 2px 4px;
 	}
 
 	.contrib-label {

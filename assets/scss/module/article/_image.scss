@@ -14,14 +14,14 @@
 		max-height: 600px;
 		max-width: 100%;
 		display: inline-block;
-		
+
 		position: relative;
 		a {
 			overflow: hidden;
 			max-height: 600px;
 		}
 		img, a {
-			display: inline;
+			display: block;
 			margin: 0 auto;
 		}
 
@@ -57,7 +57,7 @@
 		a {
 			overflow: hidden;
 			max-height: 600px;
-			display: blockl
+			display: inline-block;
 		}
 		img {
 			max-width: 100%;
