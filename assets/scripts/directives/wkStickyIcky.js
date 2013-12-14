@@ -7,8 +7,8 @@ define([
       restrict: 'A',
       link: function( $scope, $elem ) {
         var topBarHeight = $('.top-bar').height();
-        var elemPaddingTop = parseInt($elem.css( 'padding-top' ).replace( /[^\d]+/g, '' ));
-        var elemOffsetTop = $elem.offset().top + elemPaddingTop + 4; // because
+        var elemPaddingTop = parseInt($elem.css( 'padding-top' ).replace( /[^\d]+/g, '' ), 10);
+        var elemOffsetTop = $elem.offset().top - topBarHeight;
         $( window ).on( 'scroll', function() {
           var scrollHeight = $( this ).scrollTop();
           if ( scrollHeight >= elemOffsetTop ) {
