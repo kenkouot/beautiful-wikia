@@ -27,5 +27,16 @@ body.shadowofmordor-theme {
 		background-position: 0 0;
 	}
 
-	
+	.content article,
+	.infobox,
+	wk-table-of-contents .table-of-contents a {
+		border-color: #333;
+	}
+
+	wk-table-of-contents .table-of-contents li {
+		&.active a {
+			border-color: #777;
+			color: #777;
+		}
+	}
 }
