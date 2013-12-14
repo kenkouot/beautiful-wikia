@@ -17,7 +17,6 @@ define([
       templateUrl: 'hero-image.html',
       link: function( scope, $elem, attrs ) {
         // * do stuff here *
-        console.log( $elem );
       }
     };
   });

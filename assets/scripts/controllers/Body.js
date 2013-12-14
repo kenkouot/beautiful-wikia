@@ -3,9 +3,8 @@ define([
 ], function( exports ) {
   'use strict';
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location', 'relatedArticles',
-    function( $scope, $rootScope, $location, relatedArticles ) {
-
-      $scope.pageHeader = 'Beautiful Wikia';
+    function( $scope, $rootScope, $location, relatedArticles, $routeParams ) {
+      $scope.pageHeader = '';
       $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title.replace( /_|-/g, ' ' );
@@ -18,7 +17,7 @@ define([
         $scope.article = vals;
         $scope.fetchRelatedArticles(vals);
         $scope.changing = false;
-      })
+      });
       $rootScope.$on( 'article:headings', function( data, headings ) {
         $scope.headings = headings;
       });
@@ -34,7 +33,7 @@ define([
               $scope.relatedArticles = data.items[articleVal.content.page.id];
             } else {
               $scope.relatedArticles = {};
-            };
+            }
           });
         }
       };
@@ -67,7 +66,7 @@ define([
 
         $b.addClass(theme + '-theme');
         $b.data('theme', theme);
-      }
+      };
 
       $rootScope.$on('article:wikiChanging', function( data, wiki) {
         $scope.setTheme(wiki);
