@@ -58,6 +58,9 @@
 		margin-left: -16px;
 
 	}
+	h1 {
+		font-family: join("Gotham Bold", $body-font-family);
+	}
 	i {
 		font-size: 1.5rem;
 	}

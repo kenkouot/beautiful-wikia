@@ -4,7 +4,7 @@ body.batman-theme {
 	background-color: #181818;
 	color: #B0B0B0;
 
-	h2,h3,h4{
+	h2,h3,h4,h5,h6{
 		color:#fbad31;
 	}
 
@@ -38,5 +38,8 @@ body.batman-theme {
 			border-color: #777;
 			color: #777;
 		}
+	}
+	.injected-related {
+		background-color: #333;
 	}
 }

@@ -9,10 +9,10 @@ define([
     return {
       replace: true,
       restrict: 'E',
-      templateUrl: 'injected-content-ad.html',
+      templateUrl: 'injected-content-related.html',
       link: function( scope, $elem, attrs ) {
         var id = Math.floor( Math.random() * adCount + 1 );
-        $elem.find( 'img' ).attr( 'src', '/images/ads/ad' + id + '.png' );
+        //$elem.find( 'img' ).attr( 'src', '/images/ads/ad' + id + '.png' );
       }
     };
   });

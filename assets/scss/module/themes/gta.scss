@@ -9,7 +9,7 @@ body.gta-theme {
 	}
 
 
-	h2,h3,h4{
+	h2,h3,h4,h5,h6{
 		color:#597b3e;
 	}
 
@@ -40,5 +40,8 @@ body.gta-theme {
 			border-color: #999;
 			color: #333;
 		}
+	}
+	.injected-related {
+		background-color: #ccc;
 	}
 }
