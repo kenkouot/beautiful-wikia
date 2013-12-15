@@ -12,6 +12,7 @@ define([
   'directives/wkModal',
   'directives/wkTableOfContents',
   'directives/wkRelatedArticles',
+  'directives/wkRelatedArticlesInline',
   'directives/wkInjectedContent',
   'directives/wkStickyIcky',
   'directives/wkEdit'
