@@ -29,31 +29,19 @@ define([
         $scope.headingId = headingId;
       });
 
-      $scope.fetchRelatedArticles = function(articleVal, inlineCfg ) {
-        var api,
-            limit;
+      $scope.fetchRelatedArticles = function(articleVal) {
+        var api;
         // get base path
         api = articleVal.api.replace( 'api.php', '' );
 
         if ( !articleVal ) return;
-        if ( inlineCfg && inlineCfg.module === 'inline' ) {
-          limit = inlineCfg.limit;
-          relatedArticles.get( api, articleVal.content.page.id, limit || 12, function( data ) {
-            if ( typeof data.items === 'object' ) {
-              $scope.relatedArticlesInline = data.items[ articleVal.content.page.id ];
-            } else {
-              $scope.relatedArticlesInline = {};
-            }
-          });
-        } else {
-          relatedArticles.get( api, articleVal.content.page.id, limit || 12, function( data ) {
-            if ( typeof data.items === 'object' ) {
-              $scope.relatedArticles = data.items[ articleVal.content.page.id ];
-            } else {
-              $scope.relatedArticles = {};
-            }
-          });
-        }
+        relatedArticles.get( api, articleVal.content.page.id, 12, function( data ) {
+          if ( typeof data.items === 'object' ) {
+            $scope.relatedArticles = data.items[ articleVal.content.page.id ];
+          } else {
+            $scope.relatedArticles = {};
+          }
+        });
       };
 
       $scope.closeModals = function() {
