@@ -47,6 +47,7 @@ define([
 
       $scope.$watch( 'article', function( newVal, oldVal ) {
         if ( newVal ) {
+          console.log(newVal);
           var title = newVal.content.title;
           $scope.articleContent = newVal.content.html;
           $rootScope.$emit( 'article:newTitle', title );

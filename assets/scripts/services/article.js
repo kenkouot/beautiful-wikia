@@ -28,6 +28,8 @@ define([
       this.api = api;
       this.articleStringId = article;
 
+      console.log(api);
+      
       return Article.get({
         api: api || this.api,
         article: article || this.articleStringId

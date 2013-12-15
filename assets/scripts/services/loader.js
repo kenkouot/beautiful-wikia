@@ -6,5 +6,6 @@ define([
   'services/article',
   'services/imageCdnPath',
   'services/relatedArticles',
-  'services/contentInjector'
+  'services/contentInjector',
+  'services/localNav'
 ], function() {});

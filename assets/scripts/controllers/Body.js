@@ -2,8 +2,8 @@ define([
   'controllers/module'
 ], function( exports ) {
   'use strict';
-  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location', 'relatedArticles',
-    function( $scope, $rootScope, $location, relatedArticles ) {
+  exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location', 'relatedArticles', 'localNav',
+    function( $scope, $rootScope, $location, relatedArticles, localNav ) {
       $scope.pageHeader = '';
       $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
@@ -74,8 +74,23 @@ define([
         $b.data('theme', theme);
       };
 
+      $scope.updateLocalNav = function(wiki) {
+        if (wiki) {
+          var api = 'http://' + wiki + '.wikia.com/';
+          localNav.getLocalNav( api, function( data ) {
+            console.log(data);
+            if ( typeof data.navigation === 'object' && typeof data.navigation.wiki === 'object') {
+              $scope.localNav = data.navigation.wiki;
+            } else {
+              $scope.localNav = {};
+            }
+          });
+        }
+      };
+
       $rootScope.$on('article:wikiChanging', function( data, wiki) {
         $scope.setTheme(wiki);
+        $scope.updateLocalNav(wiki);
       });
 
       $scope.setArticle = function( uri ) {

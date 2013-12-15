@@ -47,6 +47,7 @@ module.exports = {
 
     // make external request to custom parsoid fork
     client = restler.get( 'http://localhost:8000/' + apiEndpoint + '/' + article );
+    console.log('Calling parsoid: ' + 'http://localhost:8000/' + apiEndpoint + '/' + article);
     client.once( 'complete', function( response ) {
       client.removeAllListeners( 'error' );
 

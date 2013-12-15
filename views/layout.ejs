@@ -28,7 +28,7 @@
     -->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/min/production.css">
+    <link rel="stylesheet" href="/linker/styles/app.css">
     <!--STYLES END-->
     <script type="text/javascript">
       // Export variables from server here
@@ -96,6 +96,9 @@
     <div class="hero">
       <wk-hero-image></wk-hero-image>
     </div>
+    <div class="local-nav">
+      <wk-local-nav></wk-local-nav>
+    </div>
     <wk-save-dialogue class="z-max hide"></wk-save-dialogue>
     <wk-modal show-when="modals.articleInput">
       <wk-article-input />
@@ -151,7 +154,9 @@
     -->
 
     <!--SCRIPTS-->
-    <script src="/min/production.js"></script>
+    <script src="/linker/js/socket.io.js"></script>
+    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/app.js"></script>
     <!--SCRIPTS END-->
     <script data-main="/scripts/main.js" src="/components/requirejs/require.js"></script>
   </body>
