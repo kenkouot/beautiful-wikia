@@ -27,6 +27,7 @@ define([
 
           if ( $( 'article' ).attr( 'contenteditable' ) ) {
             $( 'article' ).removeAttr( 'contenteditable' );
+            $( 'article' ).removeClass( 'editing' );
 
             $( '.contribution-menu li' ).each(function(){
               if( !$( this ).hasClass( 'edit' ) || $( this ).is( ':first-child' ) ) {
@@ -41,6 +42,7 @@ define([
             $( 'article a, .related-articles-grid a' ).off( 'click', onAnchorClick );
           } else {
             $( 'article' ).attr( 'contenteditable', 'true' );
+            $( 'article' ).addClass( 'editing' );
             $( '.contribution-menu .edit' ).addClass( 'active' );
 
             $( 'wk-save-dialogue' ).fadeIn();

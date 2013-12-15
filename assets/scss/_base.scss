@@ -3,6 +3,8 @@ body {
 	overflow-y: scroll; // kill page jumpiness
 }
 
-body > header {
+a {
+	&:hover {
+		text-decoration: underline;
+	}
 }
-

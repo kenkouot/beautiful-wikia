@@ -1,19 +1,15 @@
-<div class="wk-injected-content">
-	<div class="injected-related">
-		<h5 id="edit-title">You may also like</h5>
-		<ul class="small-block-grid-3">
-			<li>
-				<img src="http://placekitten.com/400/250" />
-				<div>Example Title</span>
-			</li>
-			<li>
-				<img src="http://placekitten.com/400/250" />
-				<div>Example Title</span>
-			</li>
-			<li>
-				<img src="http://placekitten.com/400/250" />
-				<div>Example Title</span>
-			</li>
-		</ul>
-	</div>
+<div class="injected-related" ng-show="relatedArticles.length">
+	<h5 id="edit-title">You may also like</h5>
+	<ul class="small-block-grid-3">
+		<li ng-repeat="article in relatedArticles.slice( 0, 3 )">
+		<div class="thumb">
+			<a ng-href="{{ article.url.replace( '/wiki', '').replace( '/', '#article/' + $root.wiki + '/' ) }}">
+				<img ng-src="{{ article.imgUrl }}" />
+			</a>
+		</div>
+		<div>
+			<a ng-href="{{ article.url.replace( '/wiki', '').replace( '/', '#article/' + $root.wiki + '/' ) }}" ng-bind="article.title"></a>
+		</div>
+		</li>
+	</ul>
 </div>

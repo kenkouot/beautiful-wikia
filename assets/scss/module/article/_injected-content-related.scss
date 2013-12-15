@@ -8,6 +8,10 @@
 		h5 {
 			margin-top: 0;
 		}
+		.thumb {
+			height: 160px;
+			overflow: hidden;
+		}
 		div {
 			font-family: join("Open Sans Condensed", "Gotham Bold" $body-font-family);
 			font-size: 1.3em;
