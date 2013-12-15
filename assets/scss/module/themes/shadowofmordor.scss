@@ -4,7 +4,7 @@ body.shadowofmordor-theme {
 	background-color: #181818;
 	color: #C0C0C0 ;
 
-	h2,h3,h4{
+	h2,h3,h4,h5,h6{
 		color:#1C74A3;
 	}
 
@@ -38,5 +38,8 @@ body.shadowofmordor-theme {
 			border-color: #777;
 			color: #777;
 		}
+	}
+	.injected-related {
+		background-color: #333;
 	}
 }

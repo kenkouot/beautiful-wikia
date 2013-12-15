@@ -55,7 +55,8 @@ define([
                * it externally
                */
               if ( isExternalLink ) {
-                return window.open( href, '_blank' );
+                window.open( href, '_blank' );
+                return false;
               }
 
               if ( !isImageLink ) {
