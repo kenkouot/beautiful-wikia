@@ -22,7 +22,7 @@
 
   if ( env === 'production' ) {
     // ship preminified versions in prod environment
-    Array.prototype.forEach.call( path, function( path ) {
+    path.forEach(function( path ) {
       path += '.min';
     });
   }

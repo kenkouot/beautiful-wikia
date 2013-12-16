@@ -24,6 +24,7 @@ define([
               newVal.forEach(function( item ) {
                 item.imgUrl = imageCdnPath.get( decodeURIComponent( item.imgUrl ) );
               });
+              scope.articles = newVal;
             }
           });
         }

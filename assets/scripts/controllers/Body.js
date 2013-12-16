@@ -3,23 +3,19 @@ define([
 ], function( exports ) {
   'use strict';
   exports.controller( 'BodyCtrl', [ '$scope', '$rootScope', '$location', 'relatedArticles',
-    function( $scope, $rootScope, $location, relatedArticles ) {
+    function( $scope, $rootScope, $location, relatedArticles, $routeParams ) {
       $scope.pageHeader = '';
       $scope.hasScrollHeight = false;
       $rootScope.$on( 'article:newTitle', function( data, title ) {
         $scope.pageHeader = title.replace( /_|-/g, ' ' );
       });
-      $rootScope.$on( 'article:changing', function() {
+      $rootScope.$on( 'article:changing', function( data, title ) {
         $scope.changing = true;
         $scope.relatedArticles = {};
       });
       $rootScope.$on( 'article:changed', function( data, vals) {
         $scope.article = vals;
         $scope.fetchRelatedArticles(vals);
-        $scope.fetchRelatedArticles(vals, {
-          limit: 3,
-          module: 'inline'
-        });
         $scope.changing = false;
       });
       $rootScope.$on( 'article:headings', function( data, headings ) {
@@ -29,19 +25,17 @@ define([
         $scope.headingId = headingId;
       });
 
-      $scope.fetchRelatedArticles = function(articleVal) {
-        var api;
-        // get base path
-        api = articleVal.api.replace( 'api.php', '' );
-
-        if ( !articleVal ) return;
-        relatedArticles.get( api, articleVal.content.page.id, 12, function( data ) {
-          if ( typeof data.items === 'object' ) {
-            $scope.relatedArticles = data.items[ articleVal.content.page.id ];
-          } else {
-            $scope.relatedArticles = {};
-          }
-        });
+       $scope.fetchRelatedArticles = function(articleVal) {
+        if (articleVal) {
+          var api = articleVal.api.replace('api.php', '');
+          relatedArticles.get(api, articleVal.content.page.id, 12, function(data) {
+            if ( typeof data.items === 'object') {
+              $scope.relatedArticles = data.items[articleVal.content.page.id];
+            } else {
+              $scope.relatedArticles = {};
+            }
+          });
+        }
       };
 
       $scope.closeModals = function() {
@@ -116,5 +110,5 @@ define([
         }
       };
 
-    }]);
-  });
+  }]);
+});
