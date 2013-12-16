@@ -15,7 +15,7 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var restler = require( 'restler' ),
+var http = require( 'http' ),
     domino = require( 'domino' );
 
 module.exports = {
@@ -25,27 +25,39 @@ module.exports = {
    */
   _config: {},
   index: function( req, res ) {
-    var path, client, response;
+    var path, response;
 
     path = req.query.path.slice( 2 );
-    client = restler.get( 'http://batman.wikia.com/wiki/' + path );
 
     response = {};
+  
+    var str = '';
+    var client = http.get('http://batman.wikia.com/wiki/' + path, function(htres) {
 
-    client.once( 'complete', function( data ) {
-      var window, document, href;
-      window = domino.createWindow( data );
-      document = window.document;
-      href = document.querySelector( '.fullImageLink a' ).href;
+      htres.on('data', function(chunk) {
+        str += chunk
+      });
 
-      if ( href ) {
-        response.status = 'success';
-        response.href = href;
-      } else {
-        response.status = 'error';
-      }
+      htres.on('end', function(chunk) {
+        data = JSON.parse(str);
+        var window, document, href;
+        window = domino.createWindow( data );
+        document = window.document;
+        href = document.querySelector( '.fullImageLink a' ).href;
 
-      res.send( response );
+        if ( href ) {
+          response.status = 'success';
+          response.href = href;
+        } else {
+          response.status = 'error';
+        }
+        client.abort();
+        res.send( response );
+      });
+
+    }).on('error', function(e) {
+      client.abort();
+      res.send(500);
     });
   }
 };
