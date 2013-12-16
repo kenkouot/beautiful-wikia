@@ -521,6 +521,7 @@ module.exports = function (grunt) {
   grunt.registerTask('prod', [
     'clean:dev',
     // 'less:dev',
+    'ngtemplates:dev',
     'requirejs:compile',
     'sass:prod',
     'copy:dev',
