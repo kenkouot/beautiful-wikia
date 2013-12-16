@@ -25,6 +25,9 @@ body.callofduty-theme {
 		@include background-image( url( '/images/hero/callofduty.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
+		&.bottom-hero {
+			@include background-image( url( '/images/hero/callofduty-2.jpg' ) );
+		}
 	}
 
 	.content article,
