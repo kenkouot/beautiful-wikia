@@ -28,6 +28,9 @@ body.walkingdead-theme {
 		@include background-image( url( '/images/hero/The-Walking-Dead.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
+		&.bottom-hero {
+			@include background-image( url( '/images/hero/The-Walking-Dead-2.jpg' ) );
+		}
 	}
 
 	.injected-related {

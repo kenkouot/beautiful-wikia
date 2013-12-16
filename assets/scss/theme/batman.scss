@@ -25,6 +25,9 @@ body.batman-theme {
 		@include background-image( url( '/images/hero/batman_hero_xl.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
+		&.bottom-hero {
+			@include background-image( url( '/images/hero/batman_hero_xl-2.jpg' ) );
+		}
 	}
 
 
