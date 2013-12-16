@@ -28,7 +28,7 @@
     -->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/min/production.css">
+    <link rel="stylesheet" href="/linker/styles/app.css">
     <!--STYLES END-->
     <script type="text/javascript">
       // Export variables from server here
@@ -142,7 +142,9 @@
     -->
 
     <!--SCRIPTS-->
-    <script src="/min/production.js"></script>
+    <script src="/linker/js/socket.io.js"></script>
+    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/app.js"></script>
     <!--SCRIPTS END-->
     <%if ( env ==='production' ) { %>
     <script src="/dist/main-built.js"></script>

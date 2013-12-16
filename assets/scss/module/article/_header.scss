@@ -2,7 +2,7 @@
 	display: none;
 }
 
-.content-wrapper > header {
+.content-wrapper > header, .related-articles-grid  header{
 	@extend .fade;
 	font-family: $paragraph-font-family;
 	position: relative;

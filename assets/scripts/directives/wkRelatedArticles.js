@@ -24,6 +24,24 @@ define([
               newVal.forEach(function( item ) {
                 item.imgUrl = imageCdnPath.get( decodeURIComponent( item.imgUrl ) );
               });
+
+              var nextArticles = [];
+              var nextLinks =[];
+              var path = $(location).attr('href');
+              path = path.split('/');
+              path = path[path.length - 2]
+              $("a[rel^='mw:WikiLink']").each(function(){
+                nextArticles.push($(this).text());
+                nextLinks.push($(this).attr('href'));
+              });
+              var num = Math.floor(Math.random()*nextArticles.length);
+              var nextArticle = nextArticles[num];
+              var nextLink = nextLinks[num];
+              nextLink = nextLink.substring(2);
+              nextLink = '/#/article/' + path + '/' + nextLink;
+              $('.related-articles-grid #wk-next-article-title').text(nextArticle);
+              $('#footer-link').attr('href', nextLink);
+              console.log(nextLink);
             }
           });
         }
