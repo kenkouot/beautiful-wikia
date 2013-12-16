@@ -2,6 +2,7 @@ define([
   'angular',
   'ngTemplates',
   /* dependencies without exports */
+  'jquery',
   'angularRoute',
   'angularResource',
   'directives/loader',

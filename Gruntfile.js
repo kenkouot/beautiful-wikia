@@ -137,6 +137,9 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
 
+
+  grunt.loadTasks( 'node_modules/grunt-contrib-requirejs/tasks' );
+
   grunt.loadTasks( 'node_modules/grunt-contrib-sass/tasks' );
   // Precompilation of ng-templates
   grunt.loadTasks( 'node_modules/grunt-angular-templates/tasks' );
@@ -203,31 +206,28 @@ module.exports = function (grunt) {
       }
     },
 
-    /*
-     * NO LONGER USING LESS, leaving this here for reference
-     *
-     * less: {
-     *   dev: {
-     *     files: [
-     *       {
-     *       expand: true,
-     *       cwd: 'assets/styles/',
-     *       src: ['*.less'],
-     *       dest: '.tmp/public/styles/',
-     *       ext: '.css'
-     *     }, {
-     *       expand: true,
-     *       cwd: 'assets/linker/styles/',
-     *       src: ['*.less'],
-     *       dest: '.tmp/public/linker/styles/',
-     *       ext: '.css'
-     *     }
-     *     ]
-     *   }
-     * },
-     *
-     *
-     */
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: './assets/scripts',
+          name: 'main',
+          out: './assets/dist/main-built.js',
+          paths: {
+            'angularSrc': '../components/angular/angular',
+            'angularRoute': '../components/angular-route/angular-route',
+            'angularResource': '../components/angular-resource/angular-resource',
+            'jquery': '../components/jquery/jquery',
+            'scrollSpy': 'vendor/scrollSpy'
+          },
+          optimize: 'uglify2',
+          uglify2: {
+            warnings: false,
+            mangle: false
+          },
+          include: [ 'require.js' ]
+        }
+      }
+    },
 
     sass: {
       dev: {
@@ -244,7 +244,23 @@ module.exports = function (grunt) {
           dest: '.tmp/public/linker/styles/',
           ext: '.css'
         }]
+      },
+      prod: {
+        options: {
+          style: 'compressed',
+          trace: false,
+          lineNumbers: false,
+          noCache: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'assets/linker/styles/',
+          src: ['*.scss'],
+          dest: '.tmp/public/linker/styles/',
+          ext: '.css'
+        }]
       }
+
     },
 
     coffee: {
@@ -473,7 +489,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('compileAssets', [
     'clean:dev',
-    'jst:dev',
     'ngtemplates:dev',
     // 'less:dev',
     'sass:dev',
@@ -505,9 +520,10 @@ module.exports = function (grunt) {
   // When sails is lifted in production
   grunt.registerTask('prod', [
     'clean:dev',
-    'jst:dev',
     // 'less:dev',
-    'sass:dev',
+    'ngtemplates:dev',
+    'requirejs:compile',
+    'sass:prod',
     'copy:dev',
     'coffee:dev',
     'concat',

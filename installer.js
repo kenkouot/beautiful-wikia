@@ -9,7 +9,7 @@ var npmInstall = [
 ];
 
 var dependencies = [
-  'bower', 'jshint', 'sails'
+  'bower', 'jshint', 'sails', 'requirejs', 'forever'
 ];
 
 var children = [];

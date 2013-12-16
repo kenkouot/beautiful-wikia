@@ -15,7 +15,7 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var restler = require( 'restler' );
+var url = require('url');
 
 module.exports = {
   /**
@@ -28,8 +28,8 @@ module.exports = {
   index: function( req, res ) {
     var apiEndpoint,
         article,
-        errors,
-        client;
+        errors;
+
 
     apiEndpoint = req.query.api;
     article = req.query.article;
@@ -45,17 +45,72 @@ module.exports = {
       });
     }
 
-    // make external request to custom parsoid fork
-    client = restler.get( 'http://localhost:8000/' + apiEndpoint + '/' + article );
-    client.once( 'complete', function( response ) {
-      client.removeAllListeners( 'error' );
+    /* option have callbacks:
+     - redirect
+     - success
+     - error */
+    function makeCall(getUrl, options) {
+      var http = require('http');
+      var str='';
 
-      res.json({
-        api: apiEndpoint,
-        article: article,
-        contentType: 'html',
-        content: response
+      var client = http.get(getUrl, function(htres) {
+        console.log("request started: ", getUrl);
+        if (htres.statusCode < 300 || htres.statusCode > 399) {
+
+          htres.on('data', function(chunk) {
+            str += chunk
+          });
+
+          htres.on('end', function() {
+            if (options.success) { options.success(str); }
+            client.abort();
+          });
+        } else {
+          if (options.redirect) {
+            var redirectUrl = url.resolve(getUrl, htres.headers['location']);
+            options.redirect(redirectUrl);
+            client.abort();
+          }
+        }
+
+      }).on('error', function(e) {
+        console.log('Error with parsoid response: ' + e);
+        if (options.error) { options.error(e); }
       });
-    });
-  },
+    }
+
+    var apiUrl = 'http://localhost:8000/' + apiEndpoint + '/' + article;
+    var redirCount = 0;
+
+    var options = {
+      success: function(str) {
+        try {
+          res.json({
+            api: apiEndpoint,
+            article: article,
+            contentType: 'html',
+            content: JSON.parse(str)
+          });
+        } catch (e) {
+          console.log("Bad json from Parsoid: " + e);
+        }
+      },
+      redirect: function(newUrl) {
+        if (redirCount < 5) {
+          console.log("Redirecting to " + newUrl);
+          makeCall(newUrl, options);
+        } else {
+          error("Too many redirects");
+        }
+        redirCount++;
+      },
+      error: function(error) {
+        console.log("Error with parsoid: " + error);
+        res.send(500);
+      }
+    }
+
+    makeCall(apiUrl, options);
+    
+  }
 };

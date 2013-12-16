@@ -2,11 +2,11 @@
  * Manually start initialize angular app on document
  */
 define([
-  'require',
+  'jquery',
   'angular',
   'app',
   'routes'
-], function( require, angular, app ) {
+], function( $, angular, app ) {
   'use strict';
   angular.element( document ).ready(function() {
     angular.bootstrap( document, [ app.name ]);

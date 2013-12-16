@@ -39,17 +39,8 @@
   </head>
 
   <body ng-controller="BodyCtrl" ng-keyup="handleKeyup( $event )" class="page-{{ $root.page }}">
-    <nav class="top-bar z-max">
-      <div class="row">
-        <div class="columns small-2">
-          <h1><a href="#"><img class="logo" src="images/logo-wikia.png" alt=""></a></h1>
-        </div>
-        <div class="columns small-10">
-          <input type="text" placeholder="Search this Wikia or thousands of others">
-          <i class="fa fa-search"></i>
-        </div>
-      </div>
-    </nav>
+    
+    <wk-nav></wk-nav>
     <div class="row content-wrapper">
       <header class="row" ng-class="{ opaque: !changing }">
         <div class="columns small-9 small-offset-3">
@@ -124,7 +115,7 @@
     -->
 
     <!--TEMPLATES-->
-    <script type="text/javascript" src="/jst.js"></script>
+    
     <!--TEMPLATES END-->
 
 
@@ -155,6 +146,10 @@
     <script src="/linker/js/sails.io.js"></script>
     <script src="/linker/js/app.js"></script>
     <!--SCRIPTS END-->
+    <%if ( env ==='production' ) { %>
+    <script src="/dist/main-built.js"></script>
+    <% } else { %>
     <script data-main="/scripts/main.js" src="/components/requirejs/require.js"></script>
+    <% } %>
   </body>
 </html>
