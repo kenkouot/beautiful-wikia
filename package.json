@@ -24,6 +24,7 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "grunt-angular-templates": "~0.5.0"
+    "grunt-angular-templates": "~0.5.0",
+    "grunt-contrib-requirejs": "~0.4.1"
   }
 }

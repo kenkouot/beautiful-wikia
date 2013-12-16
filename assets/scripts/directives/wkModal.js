@@ -7,9 +7,8 @@
  * </wk-modal>
  */
 define([
-  'angular',
   'directives/module'
-], function( angular, exports ) {
+], function( exports ) {
   'use strict';
   exports.directive( 'wkModal', [ '$rootScope', '$timeout', function( $rootScope, $timeout ) {
     var animSpeed = 200;

@@ -1,7 +1,6 @@
 define([
-  'angular',
   'app'
-], function( angular, app ) {
+], function( app ) {
   'use strict';
 
   return app.config([ '$routeProvider', '$locationProvider', function( $routeProvider, $locationProvider ) {

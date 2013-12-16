@@ -17,7 +17,7 @@
   path.angular         = componentsPath + 'angular/angular';
   path.angularResource = componentsPath + 'angular-resource/angular-resource';
   path.angularRoute    = componentsPath + 'angular-route/angular-route';
-  path.jQuery          = componentsPath + 'jquery/jquery';
+  path.jquery          = componentsPath + 'jquery/jquery';
   path.scrollSpy       = 'vendor/scrollSpy';
 
   if ( env === 'production' ) {
@@ -30,16 +30,16 @@
   require.config({
     urlArgs: 'bust=' +  ( new Date() ).getTime(),
     paths: {
-      angular         : path.angular,
+      angularSrc      : path.angular,
       angularResource : path.angularResource,
       angularRoute    : path.angularRoute,
-      jQuery          : path.jQuery,
+      jquery          : path.jquery,
       scrollSpy       : path.scrollSpy
     },
     shim: {
-      angular: {
+      angularSrc: {
         exports: 'angular',
-        deps: [ 'jQuery' ]
+        deps: [ 'jquery' ]
       },
       angularResource: {
         deps: [ 'angular' ]
@@ -47,19 +47,13 @@
       angularRoute: {
         deps: [ 'angular' ]
       },
-      jQuery: {
-        exports: '$'
+      jquery: {
+        exports: 'jQuery'
       },
       scrollSpy: {
-        deps: [ 'jQuery' ]
+        deps: [ 'jquery' ]
       }
-    },
-    priority: [
-      'angular'
-    ],
-    deps: [
-      // manually initialize angular app on Require is ready
-      'bootstrap'
-    ]
+    }
   });
+  require(['bootstrap']);
 }( this ));
