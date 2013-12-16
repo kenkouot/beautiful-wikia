@@ -24,6 +24,14 @@ define([
               newVal.forEach(function( item ) {
                 item.imgUrl = imageCdnPath.get( decodeURIComponent( item.imgUrl ) );
               });
+
+              var nextArticles = [];
+              $("a[rel^='mw:WikiLink']").each(function(){
+                nextArticles.push($(this).text());
+              });
+              var nextArticle = nextArticles[Math.floor(Math.random()*nextArticles.length)];
+              console.log(nextArticle);
+              $('.related-articles-grid #wk-next-article-title').text(nextArticle);
             }
           });
         }

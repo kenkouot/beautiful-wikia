@@ -2,7 +2,35 @@
 	@extend .fade;
 	margin-top: 20px;
 	opacity: 0;
-
+	position: relative;
+	z-index: 5;
+	h2 {
+		text-transform: uppercase;
+		margin: 0;
+		padding: 10px 2em;
+		background: #333;
+	}
+	.hero {
+		background-color: #999999;
+		background-position: -100px -65px;
+		height: 460px;
+		left: 0;
+		overflow: hidden;
+		position: relative;
+		top: 0;
+		width: 100%;
+		header {
+			position: absolute;
+			margin-left: -500px;
+			left: 50%;
+			bottom: 0;
+			.contrib-icons {
+				bottom: 93px;
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
 	.row {
 		box-shadow: 0 0 50px 30px rgba( black, .1 );
 	}
@@ -13,7 +41,7 @@
 		margin:0;
 
 		.related-article {
-			width: 33%;
+			width: 33.333%;
 			float: left;
 			display: block;
 			position:relative;
