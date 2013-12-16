@@ -27,6 +27,9 @@ body.gta-theme {
 		@include background-image( url( '/images/hero/gta.jpg' ) );
 		background-size: cover;
 		background-position: 0 0;
+		&.bottom-hero {
+			@include background-image( url( '/images/hero/gta-2.jpg' ) );
+		}
 	}
 
 	.content article,
