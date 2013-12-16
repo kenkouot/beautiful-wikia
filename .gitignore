@@ -24,6 +24,7 @@ logs
 results
 
 node_modules/
+assets/dist/
 assets/components/
 assets/scripts/ngTemplates.js
 
