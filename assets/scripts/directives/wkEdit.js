@@ -21,7 +21,7 @@ define([
     return {
       restrict: 'A',
       link: function( $scope, $elem ) {
-        $elem.click(function(){
+        $elem.on('click', function(){
           // hide contribution items
           $( '.contribution-menu li' ).removeClass( 'active' );
 
