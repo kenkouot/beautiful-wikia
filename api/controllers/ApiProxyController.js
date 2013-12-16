@@ -15,8 +15,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var restler = require( 'restler' ),
-    domino = require( 'domino' );
+var domino = require( 'domino' );
+var http = require('http');
 
 module.exports = {
   /**
@@ -26,17 +26,22 @@ module.exports = {
   _config: {},
   index: function( req, res ) {
 
-  	var api = req.query.url;
+    var str = '';
+    var api = req.query.url;
 
-  	console.log('Making API call' + api);
+    var client = http.get(api, function(htres) {
+      htres.on('data', function(chunk) {
+        str += chunk
+      });
 
-  	restler.get(api).once('complete', function(result) {
-  		if (result instanceof Error) {
-  			console.log('Error:', result.message);
-  			res.send(500);
-	    } else {
-	    	res.send(result);
-	    }
-	});
+      htres.on('end', function(chunk) {
+        res.send(JSON.parse(str));
+        client.abort();
+      });
+
+    }).on('error', function(e) {
+      res.send(500);
+      client.abort();
+    });
   }
 };
