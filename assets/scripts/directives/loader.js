@@ -14,6 +14,7 @@ define([
   'directives/wkRelatedArticles',
   'directives/wkRelatedArticlesInline',
   'directives/wkInjectedContent',
+  'directives/wkNav',
   'directives/wkStickyIcky',
   'directives/wkEdit'
 ], function() {});
