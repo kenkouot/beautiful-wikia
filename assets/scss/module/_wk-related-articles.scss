@@ -1,9 +1,22 @@
+@media #{$xlarge-up} { 
+
+.related-articles-grid {
+	.hero, .row1{
+	width: 90rem !important;
+	left: 50% !important;
+	margin-left: -45rem;
+	position: relative;
+}
+}
+}
 .related-articles-grid {
 	@extend .fade;
 	margin-top: 20px;
 	opacity: 0;
 	position: relative;
 	z-index: 5;
+	background: #222;
+	overflow:auto;
 	h2 {
 		text-transform: uppercase;
 		margin: 0;
@@ -30,9 +43,17 @@
 				left: 0;
 			}
 		}
+		a {
+			display: block;
+			position:absolute;
+			top:0;
+			bottom:0;
+			right:0;
+			left:0;
+		}
 	}
 	.row {
-		box-shadow: 0 0 50px 30px rgba( black, .1 );
+		//box-shadow: 0 0 50px 30px rgba( black, .1 );
 	}
 
 	&.opaque { opacity: 1; }
